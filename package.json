@@ -1,0 +1,24 @@
+{
+  "name": "content-api-types",
+  "version": "1.0.0-alpha.1",
+  "description": "Typescript types for the EMS Press Content API",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ems-press/content-api-types.git"
+  },
+  "keywords": [
+    "ems-press",
+    "content-api",
+    "typescript"
+  ],
+  "author": "André Gaul <gaul@ems.press>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ems-press/content-api-types/issues"
+  },
+  "homepage": "https://github.com/ems-press/content-api-types#readme"
+}
