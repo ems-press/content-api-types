@@ -7,6 +7,7 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
