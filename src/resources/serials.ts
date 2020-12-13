@@ -1,4 +1,4 @@
-import { PersonGroups } from '.'
+import { PersonGroups } from './index'
 import { DateFilter, EqualFilter } from '../filter'
 import { Sort } from '../sort'
 

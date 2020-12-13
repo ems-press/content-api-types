@@ -1,5 +1,5 @@
 import { EqualFilter } from '../filter'
-import { Serials } from '.'
+import { Serials } from './index'
 
 export type PersonGroupType = 'authors' | 'editors' | 'translators'
 

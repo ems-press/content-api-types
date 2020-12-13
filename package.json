@@ -4,6 +4,7 @@
   "description": "Typescript types for the EMS Press Content API",
   "main": "dist/index.js",
   "scripts": {
+    "build": "rm -rf dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/ems-press/content-api-types/issues"
   },
-  "homepage": "https://github.com/ems-press/content-api-types#readme"
+  "homepage": "https://github.com/ems-press/content-api-types#readme",
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
 }
