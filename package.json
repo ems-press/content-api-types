@@ -2,10 +2,9 @@
   "name": "@ems-press/content-api-types",
   "version": "1.0.0-alpha.3",
   "description": "Typescript types for the EMS Press Content API",
-  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc --emitDeclarationOnly",
     "lint": "eslint src --ext .ts",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
