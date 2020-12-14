@@ -3,6 +3,7 @@
   "version": "1.0.0-alpha.5",
   "description": "Typescript types for the EMS Press Content API",
   "types": "dist/index.d.ts",
+  "typeScriptVersion": "4.1",
   "scripts": {
     "build": "rm -rf dist && tsc --emitDeclarationOnly",
     "lint": "eslint src --ext .ts",
