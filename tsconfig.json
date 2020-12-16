@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
+    "moduleResolution": "Node",
     "declaration": true,
     "esModuleInterop": true,
     "lib": ["ES2020"],
-    "module": "ESNext",
+    "module": "commonjs",
     "outDir": "dist/",
     "rootDir": "src/",
     "sourceMap": true,
     "strict": true,
-    "target": "es6"
+    "target": "es6",
+    "plugins": [
+      { "transform": "ts-transformer-keys/transformer" },
+  ]
   }
 }
