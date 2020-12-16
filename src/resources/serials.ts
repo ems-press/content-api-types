@@ -58,3 +58,4 @@ export type Filter = DateFilter<'created' | 'updated'> &
   EqualFilter<Attributes, 'serialType' | 's2oStatus'>
 
 export const attributeKeys = keys<Attributes>()
+export const relationshipKeys = keys<Relationships>()
