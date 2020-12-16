@@ -25,7 +25,6 @@ jobs:
       - run: git config --global user.name "GitHub CD bot"
       - run: git config --global user.email "github-cd-bot@ems.press"
       - run: npm version ${{ github.event.release.tag_name }}
-      - run: npm set registry https://registry.npmjs.org/
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
