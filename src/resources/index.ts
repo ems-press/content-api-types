@@ -1,3 +1,4 @@
+import { keys } from 'ts-transformer-keys'
 import * as PersonGroups from './person-groups'
 import * as Serials from './serials'
 
@@ -24,3 +25,17 @@ export type FilterForType<T extends Type> = {
   'person-groups': PersonGroups.Filter
   serials: Serials.Filter
 }[T]
+
+export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
+  'person-groups': keys<PersonGroups.Attributes>(),
+  serials: keys<Serials.Attributes>(),
+}
+
+export const relationshipKeys: {
+  [T in Type]: (keyof RelationshipsForType<T>)[]
+} = {
+  'person-groups': keys<PersonGroups.Relationships>(),
+  serials: keys<Serials.Relationships>(),
+}
+
+// TODO: sortables and filters
