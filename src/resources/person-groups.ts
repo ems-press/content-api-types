@@ -1,4 +1,3 @@
-import { keys } from 'ts-transformer-keys'
 import { EqualFilter } from '../filter'
 import { Serials } from './index'
 
@@ -18,6 +17,3 @@ export type Relationships = {
 export type SortField = never
 
 export type Filter = EqualFilter<Attributes, 'groupType'>
-
-export const attributeKeys = keys<Attributes>()
-export const relationshipKeys = keys<Relationships>()
