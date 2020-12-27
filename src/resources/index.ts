@@ -3,6 +3,7 @@ import * as PersonGroups from './person-groups'
 import * as Serials from './serials'
 
 export type Type = PersonGroups.Type | Serials.Type
+export const types: Type[] = ['person-groups', 'serials']
 
 export { PersonGroups, Serials }
 
