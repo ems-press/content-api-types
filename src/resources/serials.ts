@@ -1,9 +1,16 @@
 import { PersonGroups } from './index'
 import { DateFilter, EqualFilter, IsInFilter } from '../filter'
+import { keys } from 'ts-transformer-keys'
+import { UnionMap } from '../util'
 
 export type SerialType = 'journal' | 'magazine' | 'serial'
+export const serialTypes = keys<UnionMap<SerialType>>()
+
 export type SerialPublishingModel = 'diamond' | 's2o' | 'subscription'
+export const serialPublishingModels = keys<UnionMap<SerialPublishingModel>>()
+
 export type S2oStatus = 'open-access' | 'subscription'
+export const s2oStatuses = keys<UnionMap<S2oStatus>>()
 
 export type Type = 'serials'
 

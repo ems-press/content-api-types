@@ -1,10 +1,11 @@
 import { keys } from 'ts-transformer-keys'
 import { SortOption } from '../sort'
+import { UnionMap } from '../util'
 import * as PersonGroups from './person-groups'
 import * as Serials from './serials'
 
 export type Type = PersonGroups.Type | Serials.Type
-export const types: Type[] = ['person-groups', 'serials']
+export const types = keys<UnionMap<Type>>()
 
 export { PersonGroups, Serials }
 
@@ -24,8 +25,8 @@ export type SortFieldForType<T extends Type> = {
 }[T]
 
 export type SortOptionForType<T extends Type> = {
-  'person-groups': SortOption<PersonGroups.Attributes, PersonGroups.SortField>
-  serials: SortOption<Serials.Attributes, Serials.SortField>
+  'person-groups': SortOption<PersonGroups.SortField>
+  serials: SortOption<Serials.SortField>
 }[T]
 
 export type FilterForType<T extends Type> = {
@@ -45,4 +46,21 @@ export const relationshipKeys: {
   serials: keys<Serials.Relationships>(),
 }
 
-// TODO: sortables and filters
+export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
+  'person-groups': keys<PersonGroups.Filter>(),
+  serials: keys<Serials.Filter>(),
+}
+
+type SortFieldMap<T extends string> = Record<T, unknown>
+
+export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
+  'person-groups': keys<SortFieldMap<PersonGroups.SortField>>(),
+  serials: keys<SortFieldMap<Serials.SortField>>(),
+}
+
+type SortOptionMap<T extends string> = Record<SortOption<T>, unknown>
+
+export const sortOptions: { [T in Type]: SortOptionForType<T>[] } = {
+  'person-groups': keys<SortOptionMap<PersonGroups.SortField>>(),
+  serials: keys<SortOptionMap<Serials.SortField>>(),
+}
