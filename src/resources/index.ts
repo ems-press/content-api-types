@@ -1,4 +1,5 @@
 import { keys } from 'ts-transformer-keys'
+import { SortOption } from '../sort'
 import * as PersonGroups from './person-groups'
 import * as Serials from './serials'
 
@@ -20,6 +21,11 @@ export type RelationshipsForType<T extends Type> = {
 export type SortFieldForType<T extends Type> = {
   'person-groups': PersonGroups.SortField
   serials: Serials.SortField
+}[T]
+
+export type SortOptionForType<T extends Type> = {
+  'person-groups': SortOption<PersonGroups.Attributes, PersonGroups.SortField>
+  serials: SortOption<Serials.Attributes, Serials.SortField>
 }[T]
 
 export type FilterForType<T extends Type> = {

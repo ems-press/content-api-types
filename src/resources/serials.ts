@@ -1,6 +1,5 @@
 import { PersonGroups } from './index'
 import { DateFilter, EqualFilter, IsInFilter } from '../filter'
-import { Sort } from '../sort'
 
 export type SerialType = 'journal' | 'magazine' | 'serial'
 export type SerialPublishingModel = 'diamond' | 's2o' | 'subscription'
@@ -50,10 +49,7 @@ export type Relationships = {
   personGroups: PersonGroups.Type
 }
 
-export type SortField = Sort<
-  Attributes,
-  'createdAt' | 'updatedAt' | 'code' | 'name'
->
+export type SortField = 'createdAt' | 'updatedAt' | 'code' | 'name'
 
 export type Filter = DateFilter<'created' | 'updated'> &
   IsInFilter<Attributes, 'serialType' | 's2oStatus'> &
