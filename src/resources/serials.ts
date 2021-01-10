@@ -1,4 +1,4 @@
-import { PersonGroups } from './index'
+import { Images, PersonGroups } from './index'
 import { DateFilter, EqualFilter, IsInFilter } from '../filter'
 import { keys } from 'ts-transformer-keys'
 import { UnionMap } from '../util'
@@ -18,7 +18,6 @@ export type Attributes = {
   createdAt: Date
   updatedAt: Date
   code: string
-  coverImageUrl: string
   descriptionMarkdown?: string
   submitDescriptionMarkdown?: string
   subscribeDescriptionMarkdown?: string
@@ -54,6 +53,7 @@ export type Attributes = {
 
 export type Relationships = {
   personGroups: PersonGroups.Type
+  coverImage: Images.Type
 }
 
 export type SortField = 'createdAt' | 'updatedAt' | 'code' | 'name'
