@@ -15,7 +15,7 @@ export type Attributes = {
   sha256: string
 }
 
-export type Relationships = Record<string, never>
+export type Relationships = Record<never, never>
 
 export type SortField = 'createdAt' | 'updatedAt' | 'contentType' | 'path'
 
