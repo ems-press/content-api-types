@@ -14,7 +14,7 @@ export type Attributes = {
 }
 
 export type Relationships = {
-  serials: Serials.Type
+  serials: { type: Serials.Type; cardinality: null | 'N' }
 }
 
 export type SortField = never
