@@ -6,6 +6,7 @@ import * as PersonGroups from './person-groups'
 import * as Serials from './serials'
 
 export type Type = Images.Type | PersonGroups.Type | Serials.Type
+export type Relationship = { cardinality: null | '1' | 'N'; type: Type }
 export const types = keys<UnionMap<Type>>()
 
 export { Images, PersonGroups, Serials }
