@@ -14,7 +14,7 @@ export type Type =
 export type Relationship = { cardinality: null | '1' | 'N'; type: Type }
 export const types = keys<UnionMap<Type>>()
 
-export { Images, PersonGroups, Serials }
+export { Images, PersonGroups, Serials, SerialIssues }
 
 export type AttributesForType<T extends Type> = {
   images: Images.Attributes
