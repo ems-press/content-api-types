@@ -29,4 +29,4 @@ export type SortField =
   | 'publishedAt'
 
 export type Filter = DateFilter<'created' | 'updated' | 'published'> &
-  IsInFilter<Attributes, 'serialType' | 's2oStatus'>
+  IsInFilter<Attributes, 'serialType' | 's2oStatus'> & { serial?: number[] }
