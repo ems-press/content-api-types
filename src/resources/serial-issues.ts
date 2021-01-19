@@ -1,10 +1,10 @@
 import { Images, PersonGroups, Serials } from './index'
-import { DateFilter, EqualFilter, IsInFilter } from '../filter'
+import { DateFilter, IsInFilter } from '../filter'
 import { DatePrecision } from '../date'
 
 export type Type = 'serial-issues'
 
-export type Attributes = Serials.Attributes & {
+export type Attributes = Omit<Serials.Attributes, 'code'> & {
   issueName?: string
   volume: number
   issue: number
@@ -23,12 +23,10 @@ export type Relationships = {
 export type SortField =
   | 'createdAt'
   | 'updatedAt'
-  | 'code'
   | 'name'
   | 'volume'
   | 'issue'
   | 'publishedAt'
 
 export type Filter = DateFilter<'created' | 'updated' | 'published'> &
-  IsInFilter<Attributes, 'serialType' | 's2oStatus'> &
-  EqualFilter<Attributes, 'code'>
+  IsInFilter<Attributes, 'serialType' | 's2oStatus'>
