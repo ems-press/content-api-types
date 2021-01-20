@@ -1,6 +1,11 @@
 import { keys } from 'ts-transformer-keys'
 
-import { PersonGroups, Serials, SerialIssues } from './index'
+import {
+  PersonGroups,
+  Serials,
+  SerialIssues,
+  SerialArticleFiles,
+} from './index'
 import { DateFilter, IsInFilter } from '../filter'
 import { DatePrecision } from '../date'
 import { UnionMap } from '../util'
@@ -18,7 +23,7 @@ export const serialArticleOnlineAccessType = keys<
 export type Attributes = {
   createdAt: Date
   updatedAt: Date
-  serialArticleType: SerialArticleType
+  articleType: SerialArticleType
   acceptedAt?: Date
   acceptedAtPrecision?: DatePrecision
   publishedAt: Date
@@ -49,7 +54,7 @@ export type Relationships = {
   serial: { type: Serials.Type; cardinality: '1' }
   serialIssue: { type: SerialIssues.Type; cardinality: null | '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
-  // files: { type: SerialArticleFiles.Type; cardinality: '1' }
+  serialArticleFiles: { type: SerialArticleFiles.Type; cardinality: 'N' }
 }
 
 export type SortField =
@@ -68,7 +73,7 @@ export type Filter = DateFilter<
 > &
   IsInFilter<
     Attributes,
-    'doi' | 'licenseCode' | 'onlineAccessType' | 'languageCode'
+    'articleType' | 'doi' | 'licenseCode' | 'onlineAccessType' | 'languageCode'
   > & {
     mscs?: string[]
     keywords?: string[]

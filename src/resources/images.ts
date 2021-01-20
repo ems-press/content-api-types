@@ -1,4 +1,4 @@
-import { DateFilter, EqualFilter, IsInFilter } from '../filter'
+import { DateFilter, IsInFilter } from '../filter'
 
 export type Type = 'images'
 
@@ -13,6 +13,10 @@ export type Attributes = {
   sizeBytes: number
   md5: string
   sha256: string
+  description?: string
+  license?: string
+  licenseCode?: string
+  licenseUrl?: string
 }
 
 export type Relationships = Record<never, never>
@@ -20,5 +24,7 @@ export type Relationships = Record<never, never>
 export type SortField = 'createdAt' | 'updatedAt' | 'contentType' | 'path'
 
 export type Filter = DateFilter<'created' | 'updated'> &
-  EqualFilter<Attributes, 'path'> &
-  IsInFilter<Attributes, 'contentType'>
+  IsInFilter<
+    Attributes,
+    'contentType' | 'path' | 'md5' | 'sha256' | 'licenseCode'
+  >
