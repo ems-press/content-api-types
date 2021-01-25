@@ -26,11 +26,6 @@ export type Relationships = {
   image: { type: Images.Type; cardinality: null | '1' }
 }
 
-export type SortField = never
-// TODO?
-// | 'createdAt'
-// | 'updatedAt'
-// | 'name'
-// | 'surname'
+export type SortField = 'createdAt' | 'updatedAt'
 
 export type Filter = EqualFilter<Attributes, 'emsphAddressesId'>
