@@ -1,5 +1,5 @@
 import { keys } from 'ts-transformer-keys'
-import { EqualFilter } from '../filter'
+import { DateFilter, EqualFilter } from '../filter'
 import { UnionMap } from '../util'
 import { PersonGroupMembers, Serials } from './index'
 
@@ -18,6 +18,7 @@ export type Relationships = {
   serials: { type: Serials.Type; cardinality: null | 'N' }
 }
 
-export type SortField = never
+export type SortField = 'createdAt' | 'updatedAt'
 
-export type Filter = EqualFilter<Attributes, 'groupType'>
+export type Filter = DateFilter<'created' | 'updated'> &
+  EqualFilter<Attributes, 'groupType'>
