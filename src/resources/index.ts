@@ -3,6 +3,7 @@ import { SortOption } from '../sort'
 import { UnionMap } from '../util'
 import * as Images from './images'
 import * as PersonGroups from './person-groups'
+import * as PersonGroupMembers from './person-group-members'
 import * as Serials from './serials'
 import * as SerialArticles from './serial-articles'
 import * as SerialArticleFiles from './serial-article-files'
@@ -11,6 +12,7 @@ import * as SerialIssues from './serial-issues'
 export type Type =
   | Images.Type
   | PersonGroups.Type
+  | PersonGroupMembers.Type
   | Serials.Type
   | SerialArticles.Type
   | SerialArticleFiles.Type
@@ -21,6 +23,7 @@ export const types = keys<UnionMap<Type>>()
 export {
   Images,
   PersonGroups,
+  PersonGroupMembers,
   Serials,
   SerialArticles,
   SerialArticleFiles,
@@ -30,6 +33,7 @@ export {
 export type AttributesForType<T extends Type> = {
   images: Images.Attributes
   'person-groups': PersonGroups.Attributes
+  'person-group-members': PersonGroupMembers.Attributes
   serials: Serials.Attributes
   'serial-articles': SerialArticles.Attributes
   'serial-article-files': SerialArticleFiles.Attributes
@@ -39,6 +43,7 @@ export type AttributesForType<T extends Type> = {
 export type RelationshipsForType<T extends Type> = {
   images: Images.Relationships
   'person-groups': PersonGroups.Relationships
+  'person-group-members': PersonGroupMembers.Relationships
   serials: Serials.Relationships
   'serial-articles': SerialArticles.Relationships
   'serial-article-files': SerialArticleFiles.Relationships
@@ -48,6 +53,7 @@ export type RelationshipsForType<T extends Type> = {
 export type SortFieldForType<T extends Type> = {
   images: Images.SortField
   'person-groups': PersonGroups.SortField
+  'person-group-members': PersonGroupMembers.SortField
   serials: Serials.SortField
   'serial-articles': SerialArticles.SortField
   'serial-article-files': SerialArticleFiles.SortField
@@ -57,6 +63,7 @@ export type SortFieldForType<T extends Type> = {
 export type SortOptionForType<T extends Type> = {
   images: SortOption<Images.SortField>
   'person-groups': SortOption<PersonGroups.SortField>
+  'person-group-members': SortOption<PersonGroupMembers.SortField>
   serials: SortOption<Serials.SortField>
   'serial-articles': SortOption<SerialArticles.SortField>
   'serial-article-files': SortOption<SerialArticleFiles.SortField>
@@ -66,6 +73,7 @@ export type SortOptionForType<T extends Type> = {
 export type FilterForType<T extends Type> = {
   images: Images.Filter
   'person-groups': PersonGroups.Filter
+  'person-group-members': PersonGroupMembers.Filter
   serials: Serials.Filter
   'serial-articles': SerialArticles.Filter
   'serial-article-files': SerialArticleFiles.Filter
@@ -75,6 +83,7 @@ export type FilterForType<T extends Type> = {
 export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
   images: keys<Images.Attributes>(),
   'person-groups': keys<PersonGroups.Attributes>(),
+  'person-group-members': keys<PersonGroupMembers.Attributes>(),
   serials: keys<Serials.Attributes>(),
   'serial-articles': keys<SerialArticles.Attributes>(),
   'serial-article-files': keys<SerialArticleFiles.Attributes>(),
@@ -86,6 +95,7 @@ export const relationshipKeys: {
 } = {
   images: keys<Images.Relationships>(),
   'person-groups': keys<PersonGroups.Relationships>(),
+  'person-group-members': keys<PersonGroupMembers.Relationships>(),
   serials: keys<Serials.Relationships>(),
   'serial-articles': keys<SerialArticles.Relationships>(),
   'serial-article-files': keys<SerialArticleFiles.Relationships>(),
@@ -95,6 +105,7 @@ export const relationshipKeys: {
 export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
   images: keys<Images.Filter>(),
   'person-groups': keys<PersonGroups.Filter>(),
+  'person-group-members': keys<PersonGroupMembers.Filter>(),
   serials: keys<Serials.Filter>(),
   'serial-articles': keys<SerialArticles.Filter>(),
   'serial-article-files': keys<SerialArticleFiles.Filter>(),
@@ -106,6 +117,7 @@ type SortFieldMap<T extends string> = Record<T, unknown>
 export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
   images: keys<SortFieldMap<Images.SortField>>(),
   'person-groups': keys<SortFieldMap<PersonGroups.SortField>>(),
+  'person-group-members': keys<SortFieldMap<PersonGroupMembers.SortField>>(),
   serials: keys<SortFieldMap<Serials.SortField>>(),
   'serial-articles': keys<SortFieldMap<SerialArticles.SortField>>(),
   'serial-article-files': keys<SortFieldMap<SerialArticleFiles.SortField>>(),
@@ -117,6 +129,7 @@ type SortOptionMap<T extends string> = Record<SortOption<T>, unknown>
 export const sortOptions: { [T in Type]: SortOptionForType<T>[] } = {
   images: keys<SortOptionMap<Images.SortField>>(),
   'person-groups': keys<SortOptionMap<PersonGroups.SortField>>(),
+  'person-group-members': keys<SortOptionMap<PersonGroupMembers.SortField>>(),
   serials: keys<SortOptionMap<Serials.SortField>>(),
   'serial-articles': keys<SortOptionMap<SerialArticles.SortField>>(),
   'serial-article-files': keys<SortOptionMap<SerialArticleFiles.SortField>>(),

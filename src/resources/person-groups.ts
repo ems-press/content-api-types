@@ -1,7 +1,7 @@
 import { keys } from 'ts-transformer-keys'
 import { EqualFilter } from '../filter'
 import { UnionMap } from '../util'
-import { Serials } from './index'
+import { PersonGroupMembers, Serials } from './index'
 
 export type PersonGroupType = 'authors' | 'editors' | 'translators'
 export const personGroupTypes = keys<UnionMap<PersonGroupType>>()
@@ -14,6 +14,7 @@ export type Attributes = {
 }
 
 export type Relationships = {
+  members: { type: PersonGroupMembers.Type; cardinality: 'N' }
   serials: { type: Serials.Type; cardinality: null | 'N' }
 }
 
