@@ -4,6 +4,8 @@ import { PersonGroups } from './index'
 export type Type = 'person-group-members'
 
 export type Attributes = {
+  createdAt: Date
+  updatedAt: Date
   name: string
   surname?: string
   givenName?: string

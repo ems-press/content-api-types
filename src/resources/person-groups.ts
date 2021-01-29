@@ -9,6 +9,8 @@ export const personGroupTypes = keys<UnionMap<PersonGroupType>>()
 export type Type = 'person-groups'
 
 export type Attributes = {
+  createdAt: Date
+  updatedAt: Date
   groupType: PersonGroupType
   name: string
 }
