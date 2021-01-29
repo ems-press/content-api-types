@@ -1,5 +1,5 @@
 import { DateFilter, EqualFilter } from '../filter'
-import { PersonGroups } from './index'
+import { PersonGroups, Persons } from './index'
 
 export type Type = 'person-group-members'
 
@@ -18,7 +18,7 @@ export type Attributes = {
 }
 
 export type Relationships = {
-  // person: { type: Persons.Type; cardinality: '1' }
+  person: { type: Persons.Type; cardinality: '1' }
   personGroup: { type: PersonGroups.Type; cardinality: '1' }
 }
 
