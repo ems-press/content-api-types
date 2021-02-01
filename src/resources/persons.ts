@@ -1,5 +1,5 @@
 import { Images } from '.'
-import { DateFilter, EqualFilter } from '../filter'
+import { DateFilter } from '../filter'
 
 export type Type = 'persons'
 
@@ -19,7 +19,6 @@ export type Attributes = {
   linkedinProfile?: string
   facebookProfile?: string
   homepage?: string
-  emsphAddressesId: number
 }
 
 export type Relationships = {
@@ -28,5 +27,4 @@ export type Relationships = {
 
 export type SortField = 'createdAt' | 'updatedAt'
 
-export type Filter = EqualFilter<Attributes, 'emsphAddressesId'> &
-  DateFilter<'created' | 'updated'>
+export type Filter = DateFilter<'created' | 'updated'>
