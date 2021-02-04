@@ -6,8 +6,8 @@ export type Type = 'serial-issues'
 
 export type Attributes = Omit<Serials.Attributes, 'code'> & {
   issueName?: string
-  volume: number
-  issue: number
+  volume?: number
+  issue?: number
   pageStart: number
   pageEnd: number
   publishedAt: Date
