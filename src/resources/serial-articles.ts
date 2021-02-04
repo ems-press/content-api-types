@@ -24,6 +24,8 @@ export type Attributes = {
   createdAt: Date
   updatedAt: Date
   articleType: SerialArticleType
+  submittedAt?: Date
+  submittedAtPrecision?: DatePrecision
   acceptedAt?: Date
   acceptedAtPrecision?: DatePrecision
   publishedAt: Date
@@ -60,6 +62,7 @@ export type Relationships = {
 export type SortField =
   | 'createdAt'
   | 'updatedAt'
+  | 'submittedAt'
   | 'acceptedAt'
   | 'publishedAt'
   | 'retractedAt'
@@ -69,7 +72,7 @@ export type SortField =
   | 'pageEnd'
 
 export type Filter = DateFilter<
-  'created' | 'updated' | 'accepted' | 'published' | 'retracted'
+  'created' | 'updated' | 'submitted' | 'accepted' | 'published' | 'retracted'
 > &
   IsInFilter<
     Attributes,
