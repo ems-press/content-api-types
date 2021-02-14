@@ -37,7 +37,7 @@ export type Attributes = {
   subtitle?: string
   subtitleTex?: string
   abstractMarkdown?: string
-  abstractTex?: string
+  abstractMarkdownTex?: string
   doi?: string
   mscs?: string[]
   keywords?: string[]
