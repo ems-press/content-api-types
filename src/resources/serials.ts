@@ -19,6 +19,7 @@ export type Attributes = {
   updatedAt: Date
   code: string
   descriptionMarkdown?: string
+  readDescriptionMarkdown?: string
   submitDescriptionMarkdown?: string
   subscribeDescriptionMarkdown?: string
   serialType: SerialType
