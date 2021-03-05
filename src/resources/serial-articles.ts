@@ -49,6 +49,7 @@ export type Attributes = {
   licenseCode?: string
   licenseUrl?: string
   onlineAccessType: SerialArticleOnlineAccessType
+  readDescriptionMarkdown?: string
   languageCode?: string
 }
 

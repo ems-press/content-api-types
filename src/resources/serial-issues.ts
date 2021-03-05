@@ -4,7 +4,13 @@ import { DatePrecision } from '../date'
 
 export type Type = 'serial-issues'
 
-export type Attributes = Omit<Serials.Attributes, 'code'> & {
+export type Attributes = Omit<
+  Serials.Attributes,
+  | 'code'
+  | 'descriptionMarkdown'
+  | 'submitDescriptionMarkdown'
+  | 'subscribeDescriptionMarkdown'
+> & {
   issueName?: string
   volume?: number
   issue?: number
