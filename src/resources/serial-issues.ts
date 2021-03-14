@@ -12,6 +12,7 @@ export type Attributes = Omit<
   | 'subscribeDescriptionMarkdown'
 > & {
   issueName?: string
+  year?: number
   volume?: number
   issue?: number
   pageStart: number
@@ -31,6 +32,7 @@ export type SortField =
   | 'createdAt'
   | 'updatedAt'
   | 'name'
+  | 'year'
   | 'volume'
   | 'issue'
   | 'publishedAt'
