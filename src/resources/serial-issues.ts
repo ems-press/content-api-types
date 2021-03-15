@@ -12,7 +12,7 @@ export type Attributes = Omit<
   | 'subscribeDescriptionMarkdown'
 > & {
   issueName?: string
-  year?: number
+  year: number
   volume?: number
   issue?: number
   pageStart: number
