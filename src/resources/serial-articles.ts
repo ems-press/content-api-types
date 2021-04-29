@@ -12,7 +12,18 @@ import { UnionMap } from '../util'
 
 export type Type = 'serial-articles'
 
-export type SerialArticleType = 'editorial' | 'research-article'
+export type SerialArticleType =
+  | 'announcement'
+  | 'book-review'
+  | 'discussion'
+  | 'editorial'
+  | 'feature-article'
+  | 'interview'
+  | 'letter-to-the-editor'
+  | 'obituary'
+  | 'other'
+  | 'report'
+  | 'research-article'
 export const serialArticleTypes = keys<UnionMap<SerialArticleType>>()
 
 export type SerialArticleOnlineAccessType = 'open' | 'free' | 'subscription'
