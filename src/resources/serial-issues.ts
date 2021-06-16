@@ -15,6 +15,7 @@ export type Attributes = Omit<
   year: number
   volume?: number
   issue?: number
+  issueCount: number
   pageStart: number
   pageEnd: number
   publishedAt: Date
