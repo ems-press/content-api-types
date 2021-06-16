@@ -15,7 +15,7 @@ export type Attributes = Omit<
   year: number
   volume?: number
   issue?: number
-  issueOverride?: string
+  issueCount: number
   pageStart: number
   pageEnd: number
   publishedAt: Date
@@ -36,7 +36,6 @@ export type SortField =
   | 'year'
   | 'volume'
   | 'issue'
-  | 'issueOverride'
   | 'publishedAt'
 
 export type Filter = DateFilter<'created' | 'updated' | 'published'> &
