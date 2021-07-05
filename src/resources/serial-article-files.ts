@@ -9,7 +9,9 @@ export type Type = 'serial-article-files'
 
 export type SerialArticleFileType =
   | 'full-text-jats-xml'
+  | 'full-text-jats-xml-media'
   | 'full-text-json'
+  | 'full-text-json-media'
   | 'full-text-online-pdf'
   | 'full-text-print-pdf'
   | 'supplementary-data'
