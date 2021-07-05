@@ -7,7 +7,17 @@ import { UnionMap } from '../util'
 
 export type Type = 'serial-article-files'
 
-export type SerialArticleFileType = 'full-text' | 'supplementary-material'
+export type SerialArticleFileType =
+  | 'full-text-jats-xml'
+  | 'full-text-json'
+  | 'full-text-online-pdf'
+  | 'full-text-print-pdf'
+  | 'supplementary-data'
+  | 'supplementary-material'
+  | 'supplementary-peer-review-report'
+  | 'supplementary-post-publication-review'
+  | 'supplementary-source-code'
+  | 'supplementary-video'
 export const serialArticleFileTypes = keys<UnionMap<SerialArticleFileType>>()
 
 export type Attributes = {
