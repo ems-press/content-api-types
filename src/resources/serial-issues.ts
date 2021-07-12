@@ -33,7 +33,7 @@ export type Relationships = {
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
   coverImage: { type: Images.Type; cardinality: '1' }
   articles: { type: SerialArticles.Type; cardinality: 'N' }
-  files: { type: SerialIssueFiles.Type; cardinality: 'N' }
+  serialIssueFiles: { type: SerialIssueFiles.Type; cardinality: 'N' }
 }
 
 export type SortField =
