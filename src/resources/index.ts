@@ -9,6 +9,7 @@ import * as Serials from './serials'
 import * as SerialArticles from './serial-articles'
 import * as SerialArticleFiles from './serial-article-files'
 import * as SerialIssues from './serial-issues'
+import * as SerialIssueFiles from './serial-issue-files'
 
 export type Type =
   | Images.Type
@@ -19,6 +20,7 @@ export type Type =
   | SerialArticles.Type
   | SerialArticleFiles.Type
   | SerialIssues.Type
+  | SerialIssueFiles.Type
 export type Relationship = { cardinality: null | '1' | 'N'; type: Type }
 export const types = keys<UnionMap<Type>>()
 
@@ -31,6 +33,7 @@ export {
   SerialArticles,
   SerialArticleFiles,
   SerialIssues,
+  SerialIssueFiles,
 }
 
 export type AttributesForType<T extends Type> = {
@@ -42,6 +45,7 @@ export type AttributesForType<T extends Type> = {
   'serial-articles': SerialArticles.Attributes
   'serial-article-files': SerialArticleFiles.Attributes
   'serial-issues': SerialIssues.Attributes
+  'serial-issue-files': SerialIssueFiles.Attributes
 }[T]
 
 export type RelationshipsForType<T extends Type> = {
@@ -53,6 +57,7 @@ export type RelationshipsForType<T extends Type> = {
   'serial-articles': SerialArticles.Relationships
   'serial-article-files': SerialArticleFiles.Relationships
   'serial-issues': SerialIssues.Relationships
+  'serial-issue-files': SerialIssueFiles.Relationships
 }[T]
 
 export type SortFieldForType<T extends Type> = {
@@ -64,6 +69,7 @@ export type SortFieldForType<T extends Type> = {
   'serial-articles': SerialArticles.SortField
   'serial-article-files': SerialArticleFiles.SortField
   'serial-issues': SerialIssues.SortField
+  'serial-issue-files': SerialIssueFiles.SortField
 }[T]
 
 export type SortOptionForType<T extends Type> = {
@@ -75,6 +81,7 @@ export type SortOptionForType<T extends Type> = {
   'serial-articles': SortOption<SerialArticles.SortField>
   'serial-article-files': SortOption<SerialArticleFiles.SortField>
   'serial-issues': SortOption<SerialIssues.SortField>
+  'serial-issue-files': SortOption<SerialIssueFiles.SortField>
 }[T]
 
 export type FilterForType<T extends Type> = {
@@ -86,6 +93,7 @@ export type FilterForType<T extends Type> = {
   'serial-articles': SerialArticles.Filter
   'serial-article-files': SerialArticleFiles.Filter
   'serial-issues': SerialIssues.Filter
+  'serial-issue-files': SerialIssueFiles.Filter
 }[T]
 
 export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
@@ -97,6 +105,7 @@ export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
   'serial-articles': keys<SerialArticles.Attributes>(),
   'serial-article-files': keys<SerialArticleFiles.Attributes>(),
   'serial-issues': keys<SerialIssues.Attributes>(),
+  'serial-issue-files': keys<SerialIssueFiles.Attributes>(),
 }
 
 export const relationshipKeys: {
@@ -110,6 +119,7 @@ export const relationshipKeys: {
   'serial-articles': keys<SerialArticles.Relationships>(),
   'serial-article-files': keys<SerialArticleFiles.Relationships>(),
   'serial-issues': keys<SerialIssues.Relationships>(),
+  'serial-issue-files': keys<SerialIssueFiles.Relationships>(),
 }
 
 export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
@@ -121,6 +131,7 @@ export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
   'serial-articles': keys<SerialArticles.Filter>(),
   'serial-article-files': keys<SerialArticleFiles.Filter>(),
   'serial-issues': keys<SerialIssues.Filter>(),
+  'serial-issue-files': keys<SerialIssueFiles.Filter>(),
 }
 
 type SortFieldMap<T extends string> = Record<T, unknown>
@@ -134,6 +145,7 @@ export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
   'serial-articles': keys<SortFieldMap<SerialArticles.SortField>>(),
   'serial-article-files': keys<SortFieldMap<SerialArticleFiles.SortField>>(),
   'serial-issues': keys<SortFieldMap<SerialIssues.SortField>>(),
+  'serial-issue-files': keys<SortFieldMap<SerialIssueFiles.SortField>>(),
 }
 
 type SortOptionMap<T extends string> = Record<SortOption<T>, unknown>
@@ -147,4 +159,5 @@ export const sortOptions: { [T in Type]: SortOptionForType<T>[] } = {
   'serial-articles': keys<SortOptionMap<SerialArticles.SortField>>(),
   'serial-article-files': keys<SortOptionMap<SerialArticleFiles.SortField>>(),
   'serial-issues': keys<SortOptionMap<SerialIssues.SortField>>(),
+  'serial-issue-files': keys<SortOptionMap<SerialIssueFiles.SortField>>(),
 }
