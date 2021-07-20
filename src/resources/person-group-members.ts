@@ -10,7 +10,7 @@ export type Attributes = {
   surname?: string
   givenName?: string
   prefix?: string
-  description?: string
+  affiliation?: string
   organization?: string
   role?: string
   email?: string
