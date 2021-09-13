@@ -5,7 +5,7 @@ import {
   Serials,
   SerialIssueFiles,
 } from './index'
-import { DateFilter, IsInFilter } from '../filter'
+import { DateFilter, EqualFilter, IsInFilter } from '../filter'
 import { DatePrecision } from '../date'
 
 export type Type = 'serial-issues'
@@ -46,4 +46,5 @@ export type SortField =
   | 'publishedAt'
 
 export type Filter = DateFilter<'created' | 'updated' | 'published'> &
+  EqualFilter<Attributes, 'issue'> &
   IsInFilter<Attributes, 'serialType' | 's2oStatus'> & { serial?: number[] }
