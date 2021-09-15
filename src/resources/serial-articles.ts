@@ -5,6 +5,7 @@ import {
   Serials,
   SerialIssues,
   SerialArticleFiles,
+  SerialArticleImages,
 } from './index'
 import { DateFilter, IsInFilter } from '../filter'
 import { DatePrecision } from '../date'
@@ -69,6 +70,7 @@ export type Relationships = {
   serialIssue: { type: SerialIssues.Type; cardinality: null | '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
   serialArticleFiles: { type: SerialArticleFiles.Type; cardinality: 'N' }
+  serialArticleImages: { type: SerialArticleImages.Type; cardinality: 'N' }
 }
 
 export type SortField =
