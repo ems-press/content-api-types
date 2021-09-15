@@ -8,6 +8,7 @@ import * as PersonGroupMembers from './person-group-members'
 import * as Serials from './serials'
 import * as SerialArticles from './serial-articles'
 import * as SerialArticleFiles from './serial-article-files'
+import * as SerialArticleImages from './serial-article-images'
 import * as SerialIssues from './serial-issues'
 import * as SerialIssueFiles from './serial-issue-files'
 
@@ -19,6 +20,7 @@ export type Type =
   | Serials.Type
   | SerialArticles.Type
   | SerialArticleFiles.Type
+  | SerialArticleImages.Type
   | SerialIssues.Type
   | SerialIssueFiles.Type
 export type Relationship = { cardinality: null | '1' | 'N'; type: Type }
@@ -32,6 +34,7 @@ export {
   Serials,
   SerialArticles,
   SerialArticleFiles,
+  SerialArticleImages,
   SerialIssues,
   SerialIssueFiles,
 }
@@ -44,6 +47,7 @@ export type AttributesForType<T extends Type> = {
   serials: Serials.Attributes
   'serial-articles': SerialArticles.Attributes
   'serial-article-files': SerialArticleFiles.Attributes
+  'serial-article-images': SerialArticleImages.Attributes
   'serial-issues': SerialIssues.Attributes
   'serial-issue-files': SerialIssueFiles.Attributes
 }[T]
@@ -56,6 +60,7 @@ export type RelationshipsForType<T extends Type> = {
   serials: Serials.Relationships
   'serial-articles': SerialArticles.Relationships
   'serial-article-files': SerialArticleFiles.Relationships
+  'serial-article-images': SerialArticleImages.Relationships
   'serial-issues': SerialIssues.Relationships
   'serial-issue-files': SerialIssueFiles.Relationships
 }[T]
@@ -68,6 +73,7 @@ export type SortFieldForType<T extends Type> = {
   serials: Serials.SortField
   'serial-articles': SerialArticles.SortField
   'serial-article-files': SerialArticleFiles.SortField
+  'serial-article-images': SerialArticleImages.SortField
   'serial-issues': SerialIssues.SortField
   'serial-issue-files': SerialIssueFiles.SortField
 }[T]
@@ -80,6 +86,7 @@ export type SortOptionForType<T extends Type> = {
   serials: SortOption<Serials.SortField>
   'serial-articles': SortOption<SerialArticles.SortField>
   'serial-article-files': SortOption<SerialArticleFiles.SortField>
+  'serial-article-images': SortOption<SerialArticleImages.SortField>
   'serial-issues': SortOption<SerialIssues.SortField>
   'serial-issue-files': SortOption<SerialIssueFiles.SortField>
 }[T]
@@ -92,6 +99,7 @@ export type FilterForType<T extends Type> = {
   serials: Serials.Filter
   'serial-articles': SerialArticles.Filter
   'serial-article-files': SerialArticleFiles.Filter
+  'serial-article-images': SerialArticleImages.Filter
   'serial-issues': SerialIssues.Filter
   'serial-issue-files': SerialIssueFiles.Filter
 }[T]
@@ -104,6 +112,7 @@ export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
   serials: keys<Serials.Attributes>(),
   'serial-articles': keys<SerialArticles.Attributes>(),
   'serial-article-files': keys<SerialArticleFiles.Attributes>(),
+  'serial-article-images': keys<SerialArticleImages.Attributes>(),
   'serial-issues': keys<SerialIssues.Attributes>(),
   'serial-issue-files': keys<SerialIssueFiles.Attributes>(),
 }
@@ -118,6 +127,7 @@ export const relationshipKeys: {
   serials: keys<Serials.Relationships>(),
   'serial-articles': keys<SerialArticles.Relationships>(),
   'serial-article-files': keys<SerialArticleFiles.Relationships>(),
+  'serial-article-images': keys<SerialArticleImages.Relationships>(),
   'serial-issues': keys<SerialIssues.Relationships>(),
   'serial-issue-files': keys<SerialIssueFiles.Relationships>(),
 }
@@ -130,6 +140,7 @@ export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
   serials: keys<Serials.Filter>(),
   'serial-articles': keys<SerialArticles.Filter>(),
   'serial-article-files': keys<SerialArticleFiles.Filter>(),
+  'serial-article-images': keys<SerialArticleImages.Filter>(),
   'serial-issues': keys<SerialIssues.Filter>(),
   'serial-issue-files': keys<SerialIssueFiles.Filter>(),
 }
@@ -144,6 +155,7 @@ export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
   serials: keys<SortFieldMap<Serials.SortField>>(),
   'serial-articles': keys<SortFieldMap<SerialArticles.SortField>>(),
   'serial-article-files': keys<SortFieldMap<SerialArticleFiles.SortField>>(),
+  'serial-article-images': keys<SortFieldMap<SerialArticleImages.SortField>>(),
   'serial-issues': keys<SortFieldMap<SerialIssues.SortField>>(),
   'serial-issue-files': keys<SortFieldMap<SerialIssueFiles.SortField>>(),
 }
@@ -158,6 +170,7 @@ export const sortOptions: { [T in Type]: SortOptionForType<T>[] } = {
   serials: keys<SortOptionMap<Serials.SortField>>(),
   'serial-articles': keys<SortOptionMap<SerialArticles.SortField>>(),
   'serial-article-files': keys<SortOptionMap<SerialArticleFiles.SortField>>(),
+  'serial-article-images': keys<SortOptionMap<SerialArticleImages.SortField>>(),
   'serial-issues': keys<SortOptionMap<SerialIssues.SortField>>(),
   'serial-issue-files': keys<SortOptionMap<SerialIssueFiles.SortField>>(),
 }
