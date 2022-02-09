@@ -23,6 +23,7 @@ export type Attributes = {
   submitDescriptionMarkdown?: string
   subscribeDescriptionMarkdown?: string
   forthcomingArticlesMarkdown?: string
+  editorialBoardDescriptionMarkdown?: string
   serialType: SerialType
   name: string
   nameAbbreviation: string
