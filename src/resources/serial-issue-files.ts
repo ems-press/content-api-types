@@ -7,7 +7,7 @@ import { UnionMap } from '../util'
 
 export type Type = 'serial-issue-files'
 
-export type SerialIssueFileType = 'full-text-print-pdf'
+export type SerialIssueFileType = 'full-text-online-pdf'
 export const serialIssueFileTypes = keys<UnionMap<SerialIssueFileType>>()
 
 export type Attributes = {
