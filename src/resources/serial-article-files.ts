@@ -12,8 +12,8 @@ export type SerialArticleFileType =
   | 'full-text-jats-xml-media'
   | 'full-text-json'
   | 'full-text-json-media'
-  | 'full-text-online-first-pdf'
-  | 'full-text-online-pdf'
+  | 'full-text-online-first-pdf' // online-first == not bundled in an issue
+  | 'full-text-online-pdf' // part of an issue published online (w/ page numbers etc)
   | 'supplementary-data'
   | 'supplementary-material'
   | 'supplementary-peer-review-report'
