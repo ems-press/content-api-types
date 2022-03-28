@@ -1,6 +1,6 @@
 import { keys } from 'ts-transformer-keys'
 
-import { Books } from './index'
+import * as Books from './books'
 import { DateFilter, IsInFilter } from '../filter'
 import { UnionMap } from '../util'
 
@@ -16,9 +16,8 @@ export type BookSupplementaryUrlType =
   | 'video'
   | 'other'
 
-export const bookSupplementaryUrlTypes = keys<
-  UnionMap<BookSupplementaryUrlType>
->()
+export const bookSupplementaryUrlTypes =
+  keys<UnionMap<BookSupplementaryUrlType>>()
 
 export type Attributes = {
   createdAt: Date

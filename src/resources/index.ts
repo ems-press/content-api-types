@@ -2,9 +2,9 @@ import { keys } from 'ts-transformer-keys'
 import { SortOption } from '../sort'
 import { UnionMap } from '../util'
 import * as BookSeries from './book-series'
-import * as Books from './books'
-import * as BookFiles from './book-files'
-import * as BookSupplementaryUrls from './book-supplementary-urls'
+//import * as Books from './books'
+//import * as BookFiles from './book-files'
+//import * as BookSupplementaryUrls from './book-supplementary-urls'
 import * as Images from './images'
 import * as Persons from './persons'
 import * as PersonGroups from './person-groups'
@@ -17,10 +17,10 @@ import * as SerialIssues from './serial-issues'
 import * as SerialIssueFiles from './serial-issue-files'
 
 export type Type =
-  | Books.Type
-  | BookFiles.Type
+  //| Books.Type
+  //| BookFiles.Type
   | BookSeries.Type
-  | BookSupplementaryUrls.Type
+  //| BookSupplementaryUrls.Type
   | Images.Type
   | Persons.Type
   | PersonGroups.Type
@@ -35,10 +35,10 @@ export type Relationship = { cardinality: null | '1' | 'N'; type: Type }
 export const types = keys<UnionMap<Type>>()
 
 export {
-  Books,
-  BookFiles,
+  //Books,
+  //BookFiles,
   BookSeries,
-  BookSupplementaryUrls,
+  //BookSupplementaryUrls,
   Images,
   PersonGroups,
   PersonGroupMembers,
@@ -52,10 +52,10 @@ export {
 }
 
 export type AttributesForType<T extends Type> = {
-  books: Books.Attributes
-  'book-files': BookFiles.Attributes
+  //books: Books.Attributes
+  //'book-files': BookFiles.Attributes
   'book-series': BookSeries.Attributes
-  'book-supplementary-urls': BookSupplementaryUrls.Attributes
+  //'book-supplementary-urls': BookSupplementaryUrls.Attributes
   images: Images.Attributes
   'person-groups': PersonGroups.Attributes
   'person-group-members': PersonGroupMembers.Attributes
@@ -69,10 +69,10 @@ export type AttributesForType<T extends Type> = {
 }[T]
 
 export type RelationshipsForType<T extends Type> = {
-  books: Books.Relationships
-  'book-files': BookFiles.Relationships
+  //books: Books.Relationships
+  //'book-files': BookFiles.Relationships
   'book-series': BookSeries.Relationships
-  'book-supplementary-urls': BookSupplementaryUrls.Relationships
+  //'book-supplementary-urls': BookSupplementaryUrls.Relationships
   images: Images.Relationships
   'person-groups': PersonGroups.Relationships
   'person-group-members': PersonGroupMembers.Relationships
@@ -86,10 +86,10 @@ export type RelationshipsForType<T extends Type> = {
 }[T]
 
 export type SortFieldForType<T extends Type> = {
-  books: Books.SortField
-  'book-files': BookFiles.SortField
+  //books: Books.SortField
+  //'book-files': BookFiles.SortField
   'book-series': BookSeries.SortField
-  'book-supplementary-urls': BookSupplementaryUrls.SortField
+  //'book-supplementary-urls': BookSupplementaryUrls.SortField
   images: Images.SortField
   'person-groups': PersonGroups.SortField
   'person-group-members': PersonGroupMembers.SortField
@@ -103,10 +103,10 @@ export type SortFieldForType<T extends Type> = {
 }[T]
 
 export type SortOptionForType<T extends Type> = {
-  books: SortOption<Books.SortField>
-  'book-files': SortOption<BookFiles.SortField>
+  //books: SortOption<Books.SortField>
+  //'book-files': SortOption<BookFiles.SortField>
   'book-series': SortOption<BookSeries.SortField>
-  'book-supplementary-urls': SortOption<BookSupplementaryUrls.SortField>
+  //'book-supplementary-urls': SortOption<BookSupplementaryUrls.SortField>
   images: SortOption<Images.SortField>
   'person-groups': SortOption<PersonGroups.SortField>
   'person-group-members': SortOption<PersonGroupMembers.SortField>
@@ -120,10 +120,10 @@ export type SortOptionForType<T extends Type> = {
 }[T]
 
 export type FilterForType<T extends Type> = {
-  books: Books.Filter
-  'book-files': BookFiles.Filter
+  //books: Books.Filter
+  //'book-files': BookFiles.Filter
   'book-series': BookSeries.Filter
-  'book-supplementary-urls': BookSupplementaryUrls.Filter
+  //'book-supplementary-urls': BookSupplementaryUrls.Filter
   images: Images.Filter
   'person-groups': PersonGroups.Filter
   'person-group-members': PersonGroupMembers.Filter
@@ -137,10 +137,10 @@ export type FilterForType<T extends Type> = {
 }[T]
 
 export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
-  books: keys<Books.Attributes>(),
-  'book-files': keys<BookFiles.Attributes>(),
+  //books: keys<Books.Attributes>(),
+  //'book-files': keys<BookFiles.Attributes>(),
   'book-series': keys<BookSeries.Attributes>(),
-  'book-supplementary-urls': keys<BookSupplementaryUrls.Attributes>(),
+  //'book-supplementary-urls': keys<BookSupplementaryUrls.Attributes>(),
   images: keys<Images.Attributes>(),
   'person-groups': keys<PersonGroups.Attributes>(),
   'person-group-members': keys<PersonGroupMembers.Attributes>(),
@@ -156,10 +156,10 @@ export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
 export const relationshipKeys: {
   [T in Type]: (keyof RelationshipsForType<T>)[]
 } = {
-  books: keys<Books.Relationships>(),
-  'book-files': keys<BookFiles.Relationships>(),
+  //books: keys<Books.Relationships>(),
+  //'book-files': keys<BookFiles.Relationships>(),
   'book-series': keys<BookSeries.Relationships>(),
-  'book-supplementary-urls': keys<BookSupplementaryUrls.Relationships>(),
+  //'book-supplementary-urls': keys<BookSupplementaryUrls.Relationships>(),
   images: keys<Images.Relationships>(),
   'person-groups': keys<PersonGroups.Relationships>(),
   'person-group-members': keys<PersonGroupMembers.Relationships>(),
@@ -173,10 +173,10 @@ export const relationshipKeys: {
 }
 
 export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
-  books: keys<Books.Filter>(),
-  'book-files': keys<BookFiles.Filter>(),
+  //books: keys<Books.Filter>(),
+  //'book-files': keys<BookFiles.Filter>(),
   'book-series': keys<BookSeries.Filter>(),
-  'book-supplementary-urls': keys<BookSupplementaryUrls.Filter>(),
+  //'book-supplementary-urls': keys<BookSupplementaryUrls.Filter>(),
   images: keys<Images.Filter>(),
   'person-groups': keys<PersonGroups.Filter>(),
   'person-group-members': keys<PersonGroupMembers.Filter>(),
@@ -192,12 +192,12 @@ export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
 type SortFieldMap<T extends string> = Record<T, unknown>
 
 export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
-  books: keys<SortFieldMap<Books.SortField>>(),
-  'book-files': keys<SortFieldMap<BookFiles.SortField>>(),
+  //books: keys<SortFieldMap<Books.SortField>>(),
+  //'book-files': keys<SortFieldMap<BookFiles.SortField>>(),
   'book-series': keys<SortFieldMap<BookSeries.SortField>>(),
-  'book-supplementary-urls': keys<
-    SortFieldMap<BookSupplementaryUrls.SortField>
-  >(),
+  //'book-supplementary-urls': keys<
+  //  SortFieldMap<BookSupplementaryUrls.SortField>
+  //>(),
   images: keys<SortFieldMap<Images.SortField>>(),
   'person-groups': keys<SortFieldMap<PersonGroups.SortField>>(),
   'person-group-members': keys<SortFieldMap<PersonGroupMembers.SortField>>(),
@@ -213,12 +213,12 @@ export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
 type SortOptionMap<T extends string> = Record<SortOption<T>, unknown>
 
 export const sortOptions: { [T in Type]: SortOptionForType<T>[] } = {
-  books: keys<SortOptionMap<Books.SortField>>(),
-  'book-files': keys<SortOptionMap<BookFiles.SortField>>(),
+  //books: keys<SortOptionMap<Books.SortField>>(),
+  //'book-files': keys<SortOptionMap<BookFiles.SortField>>(),
   'book-series': keys<SortOptionMap<BookSeries.SortField>>(),
-  'book-supplementary-urls': keys<
-    SortOptionMap<BookSupplementaryUrls.SortField>
-  >(),
+  //'book-supplementary-urls': keys<
+  //  SortOptionMap<BookSupplementaryUrls.SortField>
+  //>(),
   images: keys<SortOptionMap<Images.SortField>>(),
   'person-groups': keys<SortOptionMap<PersonGroups.SortField>>(),
   'person-group-members': keys<SortOptionMap<PersonGroupMembers.SortField>>(),
