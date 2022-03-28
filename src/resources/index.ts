@@ -35,7 +35,6 @@ export type Relationship = { cardinality: null | '1' | 'N'; type: Type }
 export const types = keys<UnionMap<Type>>()
 
 export {
-  //Books,
   //BookFiles,
   BookSeries,
   //BookSupplementaryUrls,
