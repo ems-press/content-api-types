@@ -77,7 +77,7 @@ export type RelationshipsForType<T extends Type> = {
 
 export type SortFieldForType<T extends Type> = {
   'book-series': BookSeries.SortField
-  books: BookSeries.SortField
+  books: Books.SortField
   images: Images.SortField
   'person-groups': PersonGroups.SortField
   'person-group-members': PersonGroupMembers.SortField
