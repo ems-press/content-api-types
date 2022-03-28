@@ -32,8 +32,9 @@ export type SerialArticleType =
 export const serialArticleTypes = keys<UnionMap<SerialArticleType>>()
 
 export type SerialArticleOnlineAccessType = 'open' | 'free' | 'subscription'
-export const serialArticleOnlineAccessType =
-  keys<UnionMap<SerialArticleOnlineAccessType>>()
+export const serialArticleOnlineAccessType = keys<
+  UnionMap<SerialArticleOnlineAccessType>
+>()
 
 export type Attributes = {
   createdAt: Date
