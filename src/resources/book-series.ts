@@ -1,5 +1,5 @@
 import { Images, PersonGroups } from '.'
-import { DateFilter, EqualFilter, IsInFilter } from '../filter'
+import { DateFilter, EqualFilter } from '../filter'
 
 export type Type = 'book-series'
 
