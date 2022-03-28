@@ -28,7 +28,7 @@ export type Attributes = {
 
 export type Relationships = {
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
-  coverImage: { type: Images.Type; cardinality: '1' }
+  coverImage: { type: Images.Type; cardinality: null | '1' }
 }
 
 export type SortField = 'createdAt' | 'updatedAt' | 'code' | 'name'
