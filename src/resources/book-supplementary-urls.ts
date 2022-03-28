@@ -1,7 +1,7 @@
 import { keys } from 'ts-transformer-keys'
 
 import { Books } from './index'
-import { DateFilter } from '../filter'
+import { DateFilter, IsInFilter } from '../filter'
 import { UnionMap } from '../util'
 
 export type Type = 'book-supplementary-urls'
