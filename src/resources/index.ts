@@ -1,6 +1,7 @@
 import { keys } from 'ts-transformer-keys'
 import { SortOption } from '../sort'
 import { UnionMap } from '../util'
+import * as BookSeries from './book-series'
 import * as Images from './images'
 import * as Persons from './persons'
 import * as PersonGroups from './person-groups'
@@ -13,6 +14,7 @@ import * as SerialIssues from './serial-issues'
 import * as SerialIssueFiles from './serial-issue-files'
 
 export type Type =
+  | BookSeries.Type
   | Images.Type
   | Persons.Type
   | PersonGroups.Type
@@ -27,6 +29,7 @@ export type Relationship = { cardinality: null | '1' | 'N'; type: Type }
 export const types = keys<UnionMap<Type>>()
 
 export {
+  BookSeries,
   Images,
   PersonGroups,
   PersonGroupMembers,
@@ -40,6 +43,7 @@ export {
 }
 
 export type AttributesForType<T extends Type> = {
+  'book-series': BookSeries.Attributes
   images: Images.Attributes
   'person-groups': PersonGroups.Attributes
   'person-group-members': PersonGroupMembers.Attributes
@@ -53,6 +57,7 @@ export type AttributesForType<T extends Type> = {
 }[T]
 
 export type RelationshipsForType<T extends Type> = {
+  'book-series': BookSeries.Relationships
   images: Images.Relationships
   'person-groups': PersonGroups.Relationships
   'person-group-members': PersonGroupMembers.Relationships
@@ -66,6 +71,7 @@ export type RelationshipsForType<T extends Type> = {
 }[T]
 
 export type SortFieldForType<T extends Type> = {
+  'book-series': BookSeries.SortField
   images: Images.SortField
   'person-groups': PersonGroups.SortField
   'person-group-members': PersonGroupMembers.SortField
@@ -79,6 +85,7 @@ export type SortFieldForType<T extends Type> = {
 }[T]
 
 export type SortOptionForType<T extends Type> = {
+  'book-series': BookSeries.SortOption<BookSeries.SortField>
   images: SortOption<Images.SortField>
   'person-groups': SortOption<PersonGroups.SortField>
   'person-group-members': SortOption<PersonGroupMembers.SortField>
@@ -92,6 +99,7 @@ export type SortOptionForType<T extends Type> = {
 }[T]
 
 export type FilterForType<T extends Type> = {
+  'book-series': BookSeries.Filter
   images: Images.Filter
   'person-groups': PersonGroups.Filter
   'person-group-members': PersonGroupMembers.Filter
@@ -105,6 +113,7 @@ export type FilterForType<T extends Type> = {
 }[T]
 
 export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
+  'book-series': keys<BookSeries.Attributes>(),
   images: keys<Images.Attributes>(),
   'person-groups': keys<PersonGroups.Attributes>(),
   'person-group-members': keys<PersonGroupMembers.Attributes>(),
@@ -120,6 +129,7 @@ export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
 export const relationshipKeys: {
   [T in Type]: (keyof RelationshipsForType<T>)[]
 } = {
+  'book-series': keys<BookSeries.Relationships>(),
   images: keys<Images.Relationships>(),
   'person-groups': keys<PersonGroups.Relationships>(),
   'person-group-members': keys<PersonGroupMembers.Relationships>(),
@@ -133,6 +143,7 @@ export const relationshipKeys: {
 }
 
 export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
+  'book-series': keys<BookSeries.Filter>(),
   images: keys<Images.Filter>(),
   'person-groups': keys<PersonGroups.Filter>(),
   'person-group-members': keys<PersonGroupMembers.Filter>(),
@@ -148,6 +159,7 @@ export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
 type SortFieldMap<T extends string> = Record<T, unknown>
 
 export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
+  'book-series': keys<SortFieldMap<BookSeries.SortField>>(),
   images: keys<SortFieldMap<Images.SortField>>(),
   'person-groups': keys<SortFieldMap<PersonGroups.SortField>>(),
   'person-group-members': keys<SortFieldMap<PersonGroupMembers.SortField>>(),
@@ -163,6 +175,7 @@ export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
 type SortOptionMap<T extends string> = Record<SortOption<T>, unknown>
 
 export const sortOptions: { [T in Type]: SortOptionForType<T>[] } = {
+  'book-series': keys<SortOptionMap<BookSeries.SortField>>(),
   images: keys<SortOptionMap<Images.SortField>>(),
   'person-groups': keys<SortOptionMap<PersonGroups.SortField>>(),
   'person-group-members': keys<SortOptionMap<PersonGroupMembers.SortField>>(),
