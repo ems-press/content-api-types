@@ -85,7 +85,7 @@ export type SortFieldForType<T extends Type> = {
 }[T]
 
 export type SortOptionForType<T extends Type> = {
-  'book-series': BookSeries.SortOption<BookSeries.SortField>
+  'book-series': SortOption<BookSeries.SortField>
   images: SortOption<Images.SortField>
   'person-groups': SortOption<PersonGroups.SortField>
   'person-group-members': SortOption<PersonGroupMembers.SortField>
