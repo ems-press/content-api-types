@@ -1,5 +1,11 @@
 import { keys } from 'ts-transformer-keys'
-import { BookSeries, BookFiles, Images, PersonGroups } from '.'
+import {
+  BookFiles,
+  BookSeries,
+  BookSupplementaryUrls,
+  Images,
+  PersonGroups,
+} from '.'
 import { DatePrecision } from '../date'
 import { DateFilter, IsInFilter } from '../filter'
 import { UnionMap } from '../util'
@@ -65,6 +71,7 @@ export type Relationships = {
   editionPreviousBook: { type: Type; cardinality: null | '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
   bookFiles: { type: BookFiles.Type; cardinality: 'N' }
+  bookSupplementaryUrls: { type: BookSupplementaryUrls.Type; cardinality: 'N' }
 }
 
 export type SortField =
