@@ -1,6 +1,6 @@
 import { keys } from 'ts-transformer-keys'
 
-import { Books } from './index'
+import * as Books from './books'
 import { DateFilter, IsInFilter } from '../filter'
 import { UnionMap } from '../util'
 

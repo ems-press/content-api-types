@@ -1,11 +1,9 @@
 import { keys } from 'ts-transformer-keys'
-import {
-  BookFiles,
-  BookSeries,
-  BookSupplementaryUrls,
-  Images,
-  PersonGroups,
-} from '.'
+import { BookSeries, Images, PersonGroups } from '.'
+
+import * as BookFiles from './book-files'
+import * as BookSupplementaryUrls from './book-supplementary-urls'
+
 import { DatePrecision } from '../date'
 import { DateFilter, IsInFilter } from '../filter'
 import { UnionMap } from '../util'
