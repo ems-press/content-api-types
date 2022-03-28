@@ -65,7 +65,7 @@ export type Attributes = {
 }
 
 export type Relationships = {
-  bookSeries: { type: BookSeries.Type; cardinality: '1' }
+  bookSeries: { type: BookSeries.Type; cardinality: null | '1' }
   coverImage: { type: Images.Type; cardinality: '1' }
   multiVolumeParent: { type: Type; cardinality: null | '1' }
   editionPreviousBook: { type: Type; cardinality: null | '1' }
