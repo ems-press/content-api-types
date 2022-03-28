@@ -1,5 +1,5 @@
 import { keys } from 'ts-transformer-keys'
-import { BookSeries, Images, PersonGroups } from '.'
+import { BookSeries, BookFiles, Images, PersonGroups } from '.'
 import { DatePrecision } from '../date'
 import { DateFilter, IsInFilter } from '../filter'
 import { UnionMap } from '../util'
@@ -64,7 +64,7 @@ export type Relationships = {
   multiVolumeParent: { type: Type; cardinality: null | '1' }
   editionPreviousBook: { type: Type; cardinality: null | '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
-  // bookFiles: { type: BookFiles.Type; cardinality: 'N' }
+  bookFiles: { type: BookFiles.Type; cardinality: 'N' }
 }
 
 export type SortField =
