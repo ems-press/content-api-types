@@ -10,7 +10,7 @@ import { UnionMap } from '../util'
 
 export type Type = 'books'
 
-export type BookType = 'collected-volumes' | 'monograph'
+export type BookType = 'collected-volume' | 'monograph'
 export const bookTypes = keys<UnionMap<BookType>>()
 
 export type BookBinding = 'softcover' | 'hardcover'
