@@ -27,7 +27,7 @@ export type Attributes = {
 
   titleTex: string
   tile?: string
-  subtitleTex: string
+  subtitleTex?: string
   subtitle?: string
 
   blurbMarkdownTex?: string
@@ -35,7 +35,7 @@ export type Attributes = {
 
   isbn?: string
   eIsbn?: string
-  doi?: string
+  doi: string
 
   publishedAt: Date
   publishedAtPrecision: DatePrecision
