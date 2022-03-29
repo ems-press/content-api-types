@@ -22,8 +22,8 @@ export type Attributes = {
   owner?: string
   ownerUrl?: string
 
-  copyright: string
-  copyrightUrl: string
+  copyright?: string
+  copyrightUrl?: string
 }
 
 export type Relationships = {
