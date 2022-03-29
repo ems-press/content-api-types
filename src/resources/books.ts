@@ -87,7 +87,5 @@ export type Filter = DateFilter<'created' | 'updated' | 'published'> &
     mscs?: string[]
     bicSubjectCategories?: string[]
     keywords?: string[]
-    serial?: number[]
-    serialIssue?: number[]
-    serialIssueEmpty?: true
+    bookSeries?: (number | null)[]
   }
