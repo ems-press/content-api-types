@@ -1,4 +1,4 @@
-import { Images, PersonGroups } from '.'
+import { Images } from '.'
 import { DateFilter, EqualFilter } from '../filter'
 
 export type Type = 'book-series'
@@ -27,7 +27,6 @@ export type Attributes = {
 }
 
 export type Relationships = {
-  personGroups: { type: PersonGroups.Type; cardinality: 'N' }
   coverImage: { type: Images.Type; cardinality: null | '1' }
 }
 
