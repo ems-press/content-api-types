@@ -26,7 +26,7 @@ export type Attributes = {
   bookSeriesVolume?: number
 
   titleTex: string
-  tile?: string
+  title?: string
   subtitleTex?: string
   subtitle?: string
 
