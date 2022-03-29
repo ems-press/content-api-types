@@ -82,7 +82,7 @@ export type SortField =
 export type Filter = DateFilter<'created' | 'updated' | 'published'> &
   IsInFilter<
     Attributes,
-    'bookType' | 'doi' | 'licenseCode' | 'onlineAccessType'
+    'bookType' | 'doi' | 'isbn' | 'eIsbn' | 'licenseCode' | 'onlineAccessType'
   > & {
     mscs?: string[]
     bicSubjectCategories?: string[]
