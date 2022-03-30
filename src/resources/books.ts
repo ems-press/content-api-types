@@ -1,8 +1,8 @@
 import { keys } from 'ts-transformer-keys'
 import { BookSeries, Images, PersonGroups } from '.'
 
-import * as BookFiles from './book-files'
-import * as BookSupplementaryUrls from './book-supplementary-urls'
+// import * as BookFiles from './book-files'
+// import * as BookSupplementaryUrls from './book-supplementary-urls'
 
 import { DatePrecision } from '../date'
 import { DateFilter, IsInFilter } from '../filter'
@@ -10,7 +10,7 @@ import { UnionMap } from '../util'
 
 export type Type = 'books'
 
-export type BookType = 'collected-volumes' | 'monograph'
+export type BookType = 'collected-volume' | 'monograph'
 export const bookTypes = keys<UnionMap<BookType>>()
 
 export type BookBinding = 'softcover' | 'hardcover'
@@ -26,8 +26,8 @@ export type Attributes = {
   bookSeriesVolume?: number
 
   titleTex: string
-  tile?: string
-  subtitleTex: string
+  title?: string
+  subtitleTex?: string
   subtitle?: string
 
   blurbMarkdownTex?: string
@@ -35,7 +35,7 @@ export type Attributes = {
 
   isbn?: string
   eIsbn?: string
-  doi?: string
+  doi: string
 
   publishedAt: Date
   publishedAtPrecision: DatePrecision
@@ -64,12 +64,12 @@ export type Attributes = {
 
 export type Relationships = {
   bookSeries: { type: BookSeries.Type; cardinality: null | '1' }
-  coverImage: { type: Images.Type; cardinality: '1' }
+  coverImage: { type: Images.Type; cardinality: null | '1' }
   multiVolumeParent: { type: Type; cardinality: null | '1' }
   editionPreviousBook: { type: Type; cardinality: null | '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
-  bookFiles: { type: BookFiles.Type; cardinality: 'N' }
-  bookSupplementaryUrls: { type: BookSupplementaryUrls.Type; cardinality: 'N' }
+  // bookFiles: { type: BookFiles.Type; cardinality: 'N' }
+  // bookSupplementaryUrls: { type: BookSupplementaryUrls.Type; cardinality: 'N' }
 }
 
 export type SortField =
@@ -82,12 +82,10 @@ export type SortField =
 export type Filter = DateFilter<'created' | 'updated' | 'published'> &
   IsInFilter<
     Attributes,
-    'bookType' | 'doi' | 'licenseCode' | 'onlineAccessType'
+    'bookType' | 'doi' | 'isbn' | 'eIsbn' | 'licenseCode' | 'onlineAccessType'
   > & {
     mscs?: string[]
     bicSubjectCategories?: string[]
     keywords?: string[]
-    serial?: number[]
-    serialIssue?: number[]
-    serialIssueEmpty?: true
+    bookSeries?: (number | null)[]
   }
