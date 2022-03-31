@@ -88,18 +88,16 @@ export type Filter = DateFilter<'created' | 'updated' | 'published'> &
   IsInFilter<
     Attributes,
     'bookType' | 'doi' | 'isbn' | 'eIsbn' | 'licenseCode' | 'onlineAccessType'
-  > &
-  IsInFilter<
-    {
-      editionNextBook?: string
-      editionPreviousBook?: string
-      multiVolumeParent?: string
-    },
-    'editionNextBook' | 'editionPreviousBook' | 'multiVolumeParent'
   > & {
     mscs?: string[]
     bicSubjectCategories?: string[]
     keywords?: string[]
     bookSeries?: number[]
     bookSeriesEmpty?: true
+    editionNextBook?: number[]
+    editionNextBookEmpty?: true
+    editionPreviousBook?: number[]
+    editionPreviousBookEmtpy?: true
+    multiVolumeParent?: number[]
+    multiVolumeParentEmpty?: true
   }
