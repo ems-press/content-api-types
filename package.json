@@ -1,6 +1,6 @@
 {
   "name": "@ems-press/content-api-types",
-  "version": "1.0.0-beta.23",
+  "version": "1.0.0-beta.24",
   "description": "Typescript types for the EMS Press Content API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
