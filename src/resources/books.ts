@@ -25,6 +25,8 @@ export type Attributes = {
   bookType: BookType
   bookSeriesVolume?: number
 
+  multiVolumeNumber?: number
+
   titleTex: string
   title?: string
   subtitleTex?: string
@@ -65,8 +67,9 @@ export type Attributes = {
 export type Relationships = {
   bookSeries: { type: BookSeries.Type; cardinality: null | '1' }
   coverImage: { type: Images.Type; cardinality: null | '1' }
-  multiVolumeParent: { type: Type; cardinality: null | '1' }
+  editionNextBook: { type: Type; cardinality: null | '1' }
   editionPreviousBook: { type: Type; cardinality: null | '1' }
+  multiVolumeParent: { type: Type; cardinality: null | '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
   // bookFiles: { type: BookFiles.Type; cardinality: 'N' }
   // bookSupplementaryUrls: { type: BookSupplementaryUrls.Type; cardinality: 'N' }
@@ -78,11 +81,21 @@ export type SortField =
   | 'publishedAt'
   | 'title'
   | 'pages'
+  | 'bookSeriesVolume'
+  | 'multiVolumeNumber'
 
 export type Filter = DateFilter<'created' | 'updated' | 'published'> &
   IsInFilter<
     Attributes,
     'bookType' | 'doi' | 'isbn' | 'eIsbn' | 'licenseCode' | 'onlineAccessType'
+  > &
+  IsInFilter<
+    {
+      editionNextBook?: string
+      editionPreviousBook?: string
+      multiVolumeParent?: string
+    },
+    'editionNextBook' | 'editionPreviousBook' | 'multiVolumeParent'
   > & {
     mscs?: string[]
     bicSubjectCategories?: string[]
