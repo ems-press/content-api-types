@@ -97,7 +97,7 @@ export type Filter = DateFilter<'created' | 'updated' | 'published'> &
     editionNextBook?: number[]
     editionNextBookEmpty?: true
     editionPreviousBook?: number[]
-    editionPreviousBookEmtpy?: true
+    editionPreviousBookEmpty?: true
     multiVolumeParent?: number[]
     multiVolumeParentEmpty?: true
   }
