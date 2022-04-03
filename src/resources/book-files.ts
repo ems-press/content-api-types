@@ -12,13 +12,13 @@ export type BookFileType =
   | 'full-text-json-media'
   | 'full-text-jats-xml'
   | 'full-text-jats-xml-media'
-  | 'full-text-online-pdf-fulltext'
+  | 'full-text-online-pdf'
   | 'supplementary-post-publication-review'
   | 'supplementary-peer-review-report'
   | 'supplementary-data'
   | 'supplementary-source-code'
   | 'supplementary-video'
-  | 'supplementary-material' // catch-all
+  | 'supplementary-material'
 
 export const bookFileTypes = keys<UnionMap<BookFileType>>()
 
@@ -65,5 +65,5 @@ export type Filter = DateFilter<'created' | 'updated' | 'published'> &
     | 'licenseCode'
     | 'languageCode'
   > & {
-    serialArticle?: number[]
+    book?: number[]
   }
