@@ -1,7 +1,7 @@
 import { keys } from 'ts-transformer-keys'
 import { BookSeries, Images, PersonGroups } from '.'
 
-// import * as BookFiles from './book-files'
+import * as BookFiles from './book-files'
 // import * as BookSupplementaryUrls from './book-supplementary-urls'
 
 import { DatePrecision } from '../date'
@@ -71,7 +71,7 @@ export type Relationships = {
   editionPreviousBook: { type: Type; cardinality: null | '1' }
   multiVolumeParent: { type: Type; cardinality: null | '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
-  // bookFiles: { type: BookFiles.Type; cardinality: 'N' }
+  bookFiles: { type: BookFiles.Type; cardinality: 'N' }
   // bookSupplementaryUrls: { type: BookSupplementaryUrls.Type; cardinality: 'N' }
 }
 
