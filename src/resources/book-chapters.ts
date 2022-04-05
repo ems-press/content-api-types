@@ -89,7 +89,7 @@ export type SortField =
   | 'acceptedAt'
   | 'publishedAt'
   | 'retractedAt'
-  | 'title'
+  | 'titleTex'
   | 'pages'
   | 'pageStart'
   | 'pageEnd'
