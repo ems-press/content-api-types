@@ -1,5 +1,5 @@
 import { keys } from 'ts-transformer-keys'
-import { BookSeries, Images, PersonGroups } from '.'
+import { BookChapters, BookSeries, Images, PersonGroups } from './index'
 
 import * as BookFiles from './book-files'
 // import * as BookSupplementaryUrls from './book-supplementary-urls'
@@ -66,6 +66,7 @@ export type Attributes = {
 
 export type Relationships = {
   bookSeries: { type: BookSeries.Type; cardinality: null | '1' }
+  bookChapters: { type: BookChapters.Type; cardinality: 'N' }
   coverImage: { type: Images.Type; cardinality: '1' }
   editionNextBook: { type: Type; cardinality: null | '1' }
   editionPreviousBook: { type: Type; cardinality: null | '1' }
