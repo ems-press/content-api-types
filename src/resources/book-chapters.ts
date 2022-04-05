@@ -2,8 +2,8 @@ import { keys } from 'ts-transformer-keys'
 
 import {
   PersonGroups,
-  Serials,
-  SerialIssues,
+  BookSeries,
+  Books,
   // BookChapterFiles,
   // BookChapterImages,
 } from './index'
@@ -69,8 +69,8 @@ export type Attributes = {
 }
 
 export type Relationships = {
-  bookSeries: { type: Serials.Type; cardinality: null | '1' }
-  book: { type: SerialIssues.Type; cardinality: '1' }
+  bookSeries: { type: BookSeries.Type; cardinality: null | '1' }
+  book: { type: Books.Type; cardinality: '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
   // bookChapterFiles: { type: BookChapterFiles.Type; cardinality: 'N' }
   // bookChapterImages: { type: BookChapterImages.Type; cardinality: 'N' }
