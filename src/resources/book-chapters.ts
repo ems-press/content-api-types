@@ -2,9 +2,8 @@ import { keys } from 'ts-transformer-keys'
 
 import {
   PersonGroups,
-  BookSeries,
   Books,
-  // BookChapterFiles,
+  BookChapterFiles,
   // BookChapterImages,
 } from './index'
 import { DateFilter, IsInFilter } from '../filter'
@@ -77,7 +76,7 @@ export type Attributes = {
 export type Relationships = {
   book: { type: Books.Type; cardinality: '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
-  // bookChapterFiles: { type: BookChapterFiles.Type; cardinality: 'N' }
+  bookChapterFiles: { type: BookChapterFiles.Type; cardinality: 'N' }
   // bookChapterImages: { type: BookChapterImages.Type; cardinality: 'N' }
 }
 
