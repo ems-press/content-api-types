@@ -3,6 +3,7 @@ import { SortOption } from '../sort'
 import { UnionMap } from '../util'
 import * as BookSeries from './book-series'
 import * as Books from './books'
+import * as BookChapters from './book-chapters'
 import * as BookFiles from './book-files'
 //import * as BookSupplementaryUrls from './book-supplementary-urls'
 import * as Images from './images'
@@ -18,6 +19,7 @@ import * as SerialIssueFiles from './serial-issue-files'
 
 export type Type =
   | Books.Type
+  | BookChapters.Type
   | BookFiles.Type
   | BookSeries.Type
   //| BookSupplementaryUrls.Type
@@ -36,6 +38,7 @@ export const types = keys<UnionMap<Type>>()
 
 export {
   Books,
+  BookChapters,
   BookFiles,
   BookSeries,
   //BookSupplementaryUrls,
@@ -53,6 +56,7 @@ export {
 
 export type AttributesForType<T extends Type> = {
   books: Books.Attributes
+  'book-chapters': BookChapters.Attributes
   'book-files': BookFiles.Attributes
   'book-series': BookSeries.Attributes
   //'book-supplementary-urls': BookSupplementaryUrls.Attributes
@@ -70,6 +74,7 @@ export type AttributesForType<T extends Type> = {
 
 export type RelationshipsForType<T extends Type> = {
   books: Books.Relationships
+  'book-chapters': BookChapters.Relationships
   'book-files': BookFiles.Relationships
   'book-series': BookSeries.Relationships
   //'book-supplementary-urls': BookSupplementaryUrls.Relationships
@@ -87,6 +92,7 @@ export type RelationshipsForType<T extends Type> = {
 
 export type SortFieldForType<T extends Type> = {
   books: Books.SortField
+  'book-chapters': BookChapters.SortField
   'book-files': BookFiles.SortField
   'book-series': BookSeries.SortField
   //'book-supplementary-urls': BookSupplementaryUrls.SortField
@@ -104,6 +110,7 @@ export type SortFieldForType<T extends Type> = {
 
 export type SortOptionForType<T extends Type> = {
   books: SortOption<Books.SortField>
+  'book-chapters': SortOption<BookChapters.SortField>
   'book-files': SortOption<BookFiles.SortField>
   'book-series': SortOption<BookSeries.SortField>
   //'book-supplementary-urls': SortOption<BookSupplementaryUrls.SortField>
@@ -121,6 +128,7 @@ export type SortOptionForType<T extends Type> = {
 
 export type FilterForType<T extends Type> = {
   books: Books.Filter
+  'book-chapters': BookChapters.Filter
   'book-files': BookFiles.Filter
   'book-series': BookSeries.Filter
   //'book-supplementary-urls': BookSupplementaryUrls.Filter
@@ -138,6 +146,7 @@ export type FilterForType<T extends Type> = {
 
 export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
   books: keys<Books.Attributes>(),
+  'book-chapters': keys<BookChapters.Attributes>(),
   'book-files': keys<BookFiles.Attributes>(),
   'book-series': keys<BookSeries.Attributes>(),
   //'book-supplementary-urls': keys<BookSupplementaryUrls.Attributes>(),
@@ -157,6 +166,7 @@ export const relationshipKeys: {
   [T in Type]: (keyof RelationshipsForType<T>)[]
 } = {
   books: keys<Books.Relationships>(),
+  'book-chapters': keys<BookChapters.Relationships>(),
   'book-files': keys<BookFiles.Relationships>(),
   'book-series': keys<BookSeries.Relationships>(),
   //'book-supplementary-urls': keys<BookSupplementaryUrls.Relationships>(),
@@ -174,6 +184,7 @@ export const relationshipKeys: {
 
 export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
   books: keys<Books.Filter>(),
+  'book-chapters': keys<BookChapters.Filter>(),
   'book-files': keys<BookFiles.Filter>(),
   'book-series': keys<BookSeries.Filter>(),
   //'book-supplementary-urls': keys<BookSupplementaryUrls.Filter>(),
@@ -193,6 +204,7 @@ type SortFieldMap<T extends string> = Record<T, unknown>
 
 export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
   books: keys<SortFieldMap<Books.SortField>>(),
+  'book-chapters': keys<SortFieldMap<BookChapters.SortField>>(),
   'book-files': keys<SortFieldMap<BookFiles.SortField>>(),
   'book-series': keys<SortFieldMap<BookSeries.SortField>>(),
   //'book-supplementary-urls': keys<
@@ -214,6 +226,7 @@ type SortOptionMap<T extends string> = Record<SortOption<T>, unknown>
 
 export const sortOptions: { [T in Type]: SortOptionForType<T>[] } = {
   books: keys<SortOptionMap<Books.SortField>>(),
+  'book-chapters': keys<SortOptionMap<BookChapters.SortField>>(),
   'book-files': keys<SortOptionMap<BookFiles.SortField>>(),
   'book-series': keys<SortOptionMap<BookSeries.SortField>>(),
   //'book-supplementary-urls': keys<
