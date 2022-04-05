@@ -62,8 +62,8 @@ export type Attributes = {
   mscs?: string[]
 
   pages?: number
-  pageStart?: number
-  pageEnd?: number
+  pageStart?: string
+  pageEnd?: string
   absolutePageStart?: number
   absolutePageEnd?: number
 
@@ -75,7 +75,6 @@ export type Attributes = {
 }
 
 export type Relationships = {
-  bookSeries: { type: BookSeries.Type; cardinality: null | '1' }
   book: { type: Books.Type; cardinality: '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
   // bookChapterFiles: { type: BookChapterFiles.Type; cardinality: 'N' }
@@ -105,7 +104,5 @@ export type Filter = DateFilter<
   > & {
     mscs?: string[]
     keywords?: string[]
-    bookSeries?: number[]
-    bookSeriesEmpty?: true
     book?: number[]
   }
