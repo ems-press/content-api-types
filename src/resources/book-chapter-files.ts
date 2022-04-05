@@ -30,7 +30,7 @@ export type BookChapterFileType =
   | 'supplementary-video'
   | 'supplementary-material'
 
-export const BookChapterFileTypes = keys<UnionMap<BookChapterFileType>>()
+export const bookChapterFileTypes = keys<UnionMap<BookChapterFileType>>()
 
 export type Attributes = {
   createdAt: Date
