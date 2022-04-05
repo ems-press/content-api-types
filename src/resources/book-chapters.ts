@@ -39,6 +39,16 @@ export type Attributes = {
   createdAt: Date
   updatedAt: Date
   chapterType: BookChapterType
+
+  titleTex: string
+  title?: string
+  subtitleTex?: string
+  subtitle?: string
+  abstractMarkdownTex?: string
+  abstractMarkdown?: string
+
+  doi?: string
+
   submittedAt?: Date
   submittedAtPrecision?: DatePrecision
   acceptedAt?: Date
@@ -47,25 +57,21 @@ export type Attributes = {
   publishedAtPrecision: DatePrecision
   retractedAt?: Date
   retractedAtPrecision?: DatePrecision
-  title: string
-  titleTex: string
-  subtitle?: string
-  subtitleTex?: string
-  abstractMarkdown?: string
-  abstractMarkdownTex?: string
-  doi?: string
-  mscs?: string[]
+
   keywords?: string[]
+  mscs?: string[]
+
   pages?: number
   pageStart?: number
   pageEnd?: number
+  absolutePageStart?: number
+  absolutePageEnd?: number
+
   copyright?: string
   license?: string
   licenseCode?: string
   licenseUrl?: string
   onlineAccessType: BookChapterOnlineAccessType
-  readDescriptionMarkdown?: string
-  languageCode?: string
 }
 
 export type Relationships = {
@@ -87,17 +93,19 @@ export type SortField =
   | 'pages'
   | 'pageStart'
   | 'pageEnd'
+  | 'absolutePageStart'
+  | 'absolutePageEnd'
 
 export type Filter = DateFilter<
   'created' | 'updated' | 'submitted' | 'accepted' | 'published' | 'retracted'
 > &
   IsInFilter<
     Attributes,
-    'chapterType' | 'doi' | 'licenseCode' | 'onlineAccessType' | 'languageCode'
+    'chapterType' | 'doi' | 'licenseCode' | 'onlineAccessType'
   > & {
     mscs?: string[]
     keywords?: string[]
     bookSeries?: number[]
+    bookSeriesEmpty?: true
     book?: number[]
-    bookEmpty?: true
   }
