@@ -70,6 +70,8 @@ export type Attributes = {
   license?: string
   licenseCode?: string
   licenseUrl?: string
+  languageCode?: string
+
   onlineAccessType: BookChapterOnlineAccessType
 }
 
@@ -99,7 +101,7 @@ export type Filter = DateFilter<
 > &
   IsInFilter<
     Attributes,
-    'chapterType' | 'doi' | 'licenseCode' | 'onlineAccessType'
+    'chapterType' | 'doi' | 'licenseCode' | 'onlineAccessType' | 'languageCode'
   > & {
     mscs?: string[]
     keywords?: string[]
