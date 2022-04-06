@@ -4,7 +4,7 @@ import {
   PersonGroups,
   Books,
   BookChapterFiles,
-  // BookChapterImages,
+  BookChapterImages,
 } from './index'
 import { DateFilter, IsInFilter } from '../filter'
 import { DatePrecision } from '../date'
@@ -77,7 +77,7 @@ export type Relationships = {
   book: { type: Books.Type; cardinality: '1' }
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
   bookChapterFiles: { type: BookChapterFiles.Type; cardinality: 'N' }
-  // bookChapterImages: { type: BookChapterImages.Type; cardinality: 'N' }
+  bookChapterImages: { type: BookChapterImages.Type; cardinality: 'N' }
 }
 
 export type SortField =
