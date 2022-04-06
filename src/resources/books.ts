@@ -62,6 +62,7 @@ export type Attributes = {
   license?: string
   licenseCode?: string
   licenseUrl?: string
+  languageCode?: string
 }
 
 export type Relationships = {
@@ -88,7 +89,13 @@ export type SortField =
 export type Filter = DateFilter<'created' | 'updated' | 'published'> &
   IsInFilter<
     Attributes,
-    'bookType' | 'doi' | 'isbn' | 'eIsbn' | 'licenseCode' | 'onlineAccessType'
+    | 'bookType'
+    | 'doi'
+    | 'isbn'
+    | 'eIsbn'
+    | 'licenseCode'
+    | 'onlineAccessType'
+    | 'languageCode'
   > & {
     mscs?: string[]
     bicSubjectCategories?: string[]
