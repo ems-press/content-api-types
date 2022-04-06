@@ -5,7 +5,9 @@ import * as BookSeries from './book-series'
 import * as Books from './books'
 import * as BookChapters from './book-chapters'
 import * as BookChapterFiles from './book-chapter-files'
+import * as BookChapterImages from './book-chapter-images'
 import * as BookFiles from './book-files'
+import * as BookImages from './book-images'
 //import * as BookSupplementaryUrls from './book-supplementary-urls'
 import * as Images from './images'
 import * as Persons from './persons'
@@ -22,7 +24,9 @@ export type Type =
   | Books.Type
   | BookChapters.Type
   | BookChapterFiles.Type
+  | BookChapterImages.Type
   | BookFiles.Type
+  | BookImages.Type
   | BookSeries.Type
   //| BookSupplementaryUrls.Type
   | Images.Type
@@ -42,7 +46,9 @@ export {
   Books,
   BookChapters,
   BookChapterFiles,
+  BookChapterImages,
   BookFiles,
+  BookImages,
   BookSeries,
   //BookSupplementaryUrls,
   Images,
@@ -61,7 +67,9 @@ export type AttributesForType<T extends Type> = {
   books: Books.Attributes
   'book-chapters': BookChapters.Attributes
   'book-chapter-files': BookChapterFiles.Attributes
+  'book-chapter-images': BookChapterImages.Attributes
   'book-files': BookFiles.Attributes
+  'book-images': BookImages.Attributes
   'book-series': BookSeries.Attributes
   //'book-supplementary-urls': BookSupplementaryUrls.Attributes
   images: Images.Attributes
@@ -80,7 +88,9 @@ export type RelationshipsForType<T extends Type> = {
   books: Books.Relationships
   'book-chapters': BookChapters.Relationships
   'book-chapter-files': BookChapterFiles.Relationships
+  'book-chapter-images': BookChapterImages.Relationships
   'book-files': BookFiles.Relationships
+  'book-images': BookImages.Relationships
   'book-series': BookSeries.Relationships
   //'book-supplementary-urls': BookSupplementaryUrls.Relationships
   images: Images.Relationships
@@ -99,7 +109,9 @@ export type SortFieldForType<T extends Type> = {
   books: Books.SortField
   'book-chapters': BookChapters.SortField
   'book-chapter-files': BookChapterFiles.SortField
+  'book-chapter-images': BookChapterImages.SortField
   'book-files': BookFiles.SortField
+  'book-images': BookImages.SortField
   'book-series': BookSeries.SortField
   //'book-supplementary-urls': BookSupplementaryUrls.SortField
   images: Images.SortField
@@ -118,7 +130,9 @@ export type SortOptionForType<T extends Type> = {
   books: SortOption<Books.SortField>
   'book-chapters': SortOption<BookChapters.SortField>
   'book-chapter-files': SortOption<BookChapterFiles.SortField>
+  'book-chapter-images': SortOption<BookChapterImages.SortField>
   'book-files': SortOption<BookFiles.SortField>
+  'book-images': SortOption<BookImages.SortField>
   'book-series': SortOption<BookSeries.SortField>
   //'book-supplementary-urls': SortOption<BookSupplementaryUrls.SortField>
   images: SortOption<Images.SortField>
@@ -137,7 +151,9 @@ export type FilterForType<T extends Type> = {
   books: Books.Filter
   'book-chapters': BookChapters.Filter
   'book-chapter-files': BookChapterFiles.Filter
+  'book-chapter-images': BookChapterImages.Filter
   'book-files': BookFiles.Filter
+  'book-images': BookImages.Filter
   'book-series': BookSeries.Filter
   //'book-supplementary-urls': BookSupplementaryUrls.Filter
   images: Images.Filter
@@ -156,7 +172,9 @@ export const attributeKeys: { [T in Type]: (keyof AttributesForType<T>)[] } = {
   books: keys<Books.Attributes>(),
   'book-chapters': keys<BookChapters.Attributes>(),
   'book-chapter-files': keys<BookChapterFiles.Attributes>(),
+  'book-chapter-images': keys<BookChapterImages.Attributes>(),
   'book-files': keys<BookFiles.Attributes>(),
+  'book-images': keys<BookImages.Attributes>(),
   'book-series': keys<BookSeries.Attributes>(),
   //'book-supplementary-urls': keys<BookSupplementaryUrls.Attributes>(),
   images: keys<Images.Attributes>(),
@@ -177,7 +195,9 @@ export const relationshipKeys: {
   books: keys<Books.Relationships>(),
   'book-chapters': keys<BookChapters.Relationships>(),
   'book-chapter-files': keys<BookChapterFiles.Relationships>(),
+  'book-chapter-images': keys<BookChapterImages.Relationships>(),
   'book-files': keys<BookFiles.Relationships>(),
+  'book-images': keys<BookImages.Relationships>(),
   'book-series': keys<BookSeries.Relationships>(),
   //'book-supplementary-urls': keys<BookSupplementaryUrls.Relationships>(),
   images: keys<Images.Relationships>(),
@@ -196,7 +216,9 @@ export const filterKeys: { [T in Type]: (keyof FilterForType<T>)[] } = {
   books: keys<Books.Filter>(),
   'book-chapters': keys<BookChapters.Filter>(),
   'book-chapter-files': keys<BookChapterFiles.Filter>(),
+  'book-chapter-images': keys<BookChapterImages.Filter>(),
   'book-files': keys<BookFiles.Filter>(),
+  'book-images': keys<BookImages.Filter>(),
   'book-series': keys<BookSeries.Filter>(),
   //'book-supplementary-urls': keys<BookSupplementaryUrls.Filter>(),
   images: keys<Images.Filter>(),
@@ -217,7 +239,9 @@ export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
   books: keys<SortFieldMap<Books.SortField>>(),
   'book-chapters': keys<SortFieldMap<BookChapters.SortField>>(),
   'book-chapter-files': keys<SortFieldMap<BookChapterFiles.SortField>>(),
+  'book-chapter-images': keys<SortFieldMap<BookChapterImages.SortField>>(),
   'book-files': keys<SortFieldMap<BookFiles.SortField>>(),
+  'book-images': keys<SortFieldMap<BookImages.SortField>>(),
   'book-series': keys<SortFieldMap<BookSeries.SortField>>(),
   //'book-supplementary-urls': keys<
   //  SortFieldMap<BookSupplementaryUrls.SortField>
@@ -240,7 +264,9 @@ export const sortOptions: { [T in Type]: SortOptionForType<T>[] } = {
   books: keys<SortOptionMap<Books.SortField>>(),
   'book-chapters': keys<SortOptionMap<BookChapters.SortField>>(),
   'book-chapter-files': keys<SortOptionMap<BookChapterFiles.SortField>>(),
+  'book-chapter-images': keys<SortOptionMap<BookChapterImages.SortField>>(),
   'book-files': keys<SortOptionMap<BookFiles.SortField>>(),
+  'book-images': keys<SortOptionMap<BookImages.SortField>>(),
   'book-series': keys<SortOptionMap<BookSeries.SortField>>(),
   //'book-supplementary-urls': keys<
   //  SortOptionMap<BookSupplementaryUrls.SortField>
