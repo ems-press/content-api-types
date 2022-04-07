@@ -89,6 +89,7 @@ export type Relationships = {
 export type SortField =
   | 'createdAt'
   | 'updatedAt'
+  | 'position'
   | 'submittedAt'
   | 'acceptedAt'
   | 'publishedAt'
