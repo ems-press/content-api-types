@@ -39,6 +39,7 @@ export type Attributes = {
   updatedAt: Date
   chapterType: BookChapterType
 
+  position: number
   number?: string
   level: number
 
