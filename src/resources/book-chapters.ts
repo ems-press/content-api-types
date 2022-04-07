@@ -39,6 +39,9 @@ export type Attributes = {
   updatedAt: Date
   chapterType: BookChapterType
 
+  number?: string
+  level: number
+
   titleTex: string
   title?: string
   subtitleTex?: string
