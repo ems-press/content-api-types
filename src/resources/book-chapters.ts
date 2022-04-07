@@ -52,8 +52,8 @@ export type Attributes = {
   submittedAtPrecision?: DatePrecision
   acceptedAt?: Date
   acceptedAtPrecision?: DatePrecision
-  publishedAt: Date
-  publishedAtPrecision: DatePrecision
+  publishedAt?: Date
+  publishedAtPrecision?: DatePrecision
   retractedAt?: Date
   retractedAtPrecision?: DatePrecision
 
