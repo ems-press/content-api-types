@@ -43,7 +43,7 @@ export type Attributes = {
 
   isbn?: string
   eIsbn?: string
-  doi: string
+  doi?: string
 
   publishedAt: Date
   publishedAtPrecision: DatePrecision
