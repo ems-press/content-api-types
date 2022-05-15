@@ -1,6 +1,6 @@
+import { keys } from 'ts-transformer-keys'
 import { Images, PersonGroups } from './index'
 import { DateFilter, EqualFilter, IsInFilter } from '../filter'
-import { keys } from 'ts-transformer-keys'
 import { UnionMap } from '../util'
 
 export type SerialType = 'journal' | 'magazine' | 'serial'
