@@ -62,5 +62,5 @@ export type Relationships = {
 export type SortField = 'createdAt' | 'updatedAt' | 'code' | 'name'
 
 export type Filter = DateFilter<'created' | 'updated'> &
-  IsInFilter<Attributes, 'serialType' | 's2oStatus'> &
+  IsInFilter<Attributes, 'serialType' | 's2oStatus' | 'doiPrefix'> &
   EqualFilter<Attributes, 'code'>
