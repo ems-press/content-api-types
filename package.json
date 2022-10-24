@@ -6,11 +6,12 @@
   "types": "dist/index.d.ts",
   "typeScriptVersion": "4.1",
   "scripts": {
-    "build": "rm -rf dist && ttsc",
+    "build": "rm -rf dist && tsc",
     "lint": "eslint src --ext .ts",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "yalc:publish": "yalc push"
+    "yalc:publish": "yalc push",
+    "prepare": "ts-patch install -s"
   },
   "repository": {
     "type": "git",
@@ -37,8 +38,8 @@
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
+    "ts-patch": "^2.0.2",
     "ts-transformer-keys": "^0.4.3",
-    "ttypescript": "^1.5.12",
     "typescript": "^4.1.3",
     "yalc": "^1.0.0-pre.48"
   },
@@ -51,6 +52,5 @@
     "*.ts": [
       "eslint --fix"
     ]
-  },
-  "dependencies": {}
+  }
 }
