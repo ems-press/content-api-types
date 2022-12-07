@@ -25,7 +25,7 @@ export type Attributes = Omit<
   pageStart: number
   pageEnd: number
   publishedAt: Date
-  publishedAtPrecison: DatePrecision
+  publishedAtPrecision: DatePrecision
 }
 
 export type Relationships = {
