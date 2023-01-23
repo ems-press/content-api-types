@@ -12,4 +12,6 @@ export type IsInFilter<
   Attributes,
   K extends Extract<keyof Attributes, string>
 > = { [k in K]?: Exclude<Attributes[k], undefined>[] } &
-  { [k in OptionalProperty<Pick<Attributes, K>> as `${k}Empty`]?: true }
+  {
+    [k in OptionalProperty<Pick<Attributes, K>> as `${k}Empty`]?: true
+  }
