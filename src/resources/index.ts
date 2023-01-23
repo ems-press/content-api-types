@@ -243,8 +243,9 @@ export const sortFields: { [T in Type]: SortFieldForType<T>[] } = {
   'book-files': keys<SortFieldMap<BookFiles.SortField>>(),
   'book-images': keys<SortFieldMap<BookImages.SortField>>(),
   'book-series': keys<SortFieldMap<BookSeries.SortField>>(),
-  'book-supplementary-urls':
-    keys<SortFieldMap<BookSupplementaryUrls.SortField>>(),
+  'book-supplementary-urls': keys<
+    SortFieldMap<BookSupplementaryUrls.SortField>
+  >(),
   images: keys<SortFieldMap<Images.SortField>>(),
   'person-groups': keys<SortFieldMap<PersonGroups.SortField>>(),
   'person-group-members': keys<SortFieldMap<PersonGroupMembers.SortField>>(),
@@ -267,8 +268,9 @@ export const sortOptions: { [T in Type]: SortOptionForType<T>[] } = {
   'book-files': keys<SortOptionMap<BookFiles.SortField>>(),
   'book-images': keys<SortOptionMap<BookImages.SortField>>(),
   'book-series': keys<SortOptionMap<BookSeries.SortField>>(),
-  'book-supplementary-urls':
-    keys<SortOptionMap<BookSupplementaryUrls.SortField>>(),
+  'book-supplementary-urls': keys<
+    SortOptionMap<BookSupplementaryUrls.SortField>
+  >(),
   images: keys<SortOptionMap<Images.SortField>>(),
   'person-groups': keys<SortOptionMap<PersonGroups.SortField>>(),
   'person-group-members': keys<SortOptionMap<PersonGroupMembers.SortField>>(),
