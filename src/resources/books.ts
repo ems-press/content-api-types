@@ -8,7 +8,7 @@ import {
   PersonGroups,
 } from './index'
 
-// import * as BookSupplementaryUrls from './book-supplementary-urls'
+import * as BookSupplementaryUrls from './book-supplementary-urls'
 
 import { DatePrecision } from '../date'
 import { DateFilter, IsInFilter } from '../filter'
@@ -81,7 +81,7 @@ export type Relationships = {
   personGroups: { type: PersonGroups.Type; cardinality: 'N' }
   bookFiles: { type: BookFiles.Type; cardinality: 'N' }
   bookImages: { type: BookImages.Type; cardinality: 'N' }
-  // bookSupplementaryUrls: { type: BookSupplementaryUrls.Type; cardinality: 'N' }
+  bookSupplementaryUrls: { type: BookSupplementaryUrls.Type; cardinality: 'N' }
 }
 
 export type SortField =
