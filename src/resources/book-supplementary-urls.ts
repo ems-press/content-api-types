@@ -16,9 +16,8 @@ export type BookSupplementaryUrlType =
   | 'video'
   | 'other'
 
-export const bookSupplementaryUrlTypes = keys<
-  UnionMap<BookSupplementaryUrlType>
->()
+export const bookSupplementaryUrlTypes =
+  keys<UnionMap<BookSupplementaryUrlType>>()
 
 export type Attributes = {
   createdAt: Date

@@ -30,9 +30,8 @@ export type BookChapterType =
 export const bookChapterTypes = keys<UnionMap<BookChapterType>>()
 
 export type BookChapterOnlineAccessType = 'open' | 'free' | 'subscription'
-export const bookChapterOnlineAccessType = keys<
-  UnionMap<BookChapterOnlineAccessType>
->()
+export const bookChapterOnlineAccessType =
+  keys<UnionMap<BookChapterOnlineAccessType>>()
 
 export type Attributes = {
   createdAt: Date
