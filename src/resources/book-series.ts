@@ -19,6 +19,7 @@ export type Attributes = {
   submitDescriptionMarkdown?: string
   subscribeDescriptionMarkdown?: string
   editorialBoardDescriptionMarkdown?: string
+  forthcomingBooksMarkdown?: string
   name: string
   issn?: string
   eIssn?: string
