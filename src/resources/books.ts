@@ -32,6 +32,7 @@ export type Attributes = {
   bookSeriesVolume?: number
 
   multiVolumeNumber?: number
+  multiVolumeTitle?: string
 
   titleTex: string
   title?: string
