@@ -47,6 +47,7 @@ export type Attributes = {
   publishedAtPrecision: DatePrecision
   description?: string
   copyright?: string
+  copyrightUrl?: string
   license?: string
   licenseCode?: string
   licenseUrl?: string

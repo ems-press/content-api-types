@@ -71,6 +71,7 @@ export type Attributes = {
   absolutePageEnd?: number
 
   copyright?: string
+  copyrightUrl?: string
   license?: string
   licenseCode?: string
   licenseUrl?: string
