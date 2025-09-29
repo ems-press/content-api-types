@@ -70,10 +70,10 @@ export type Attributes = {
   licenseCode?: string
   licenseUrl?: string
   languageCode?: string
-} & (
-  | { coverDate: Date; coverDatePrecision: DatePrecision }
-  | { coverDate: undefined; coverDatePrecision: undefined }
-)
+
+  coverDate?: Date
+  coverDatePrecision?: DatePrecision
+}
 
 export type Relationships = {
   bookSeries: { type: BookSeries.Type; cardinality: null | '1' }
