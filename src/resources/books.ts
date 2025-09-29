@@ -71,8 +71,8 @@ export type Attributes = {
   licenseUrl?: string
   languageCode?: string
 } & (
-  { coverDate: Date, coverDatePrecision: DatePrecision } |
-  { coverDate: undefined, coverDatePrecision: undefined }
+  | { coverDate: Date; coverDatePrecision: DatePrecision }
+  | { coverDate: undefined; coverDatePrecision: undefined }
 )
 
 export type Relationships = {
