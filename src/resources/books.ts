@@ -70,7 +70,10 @@ export type Attributes = {
   licenseCode?: string
   licenseUrl?: string
   languageCode?: string
-}
+} & (
+  | { coverDate: Date; coverDatePrecision: DatePrecision }
+  | { coverDate: undefined; coverDatePrecision: undefined }
+)
 
 export type Relationships = {
   bookSeries: { type: BookSeries.Type; cardinality: null | '1' }
@@ -89,6 +92,7 @@ export type SortField =
   | 'createdAt'
   | 'updatedAt'
   | 'publishedAt'
+  | 'coverDate'
   | 'title'
   | 'pages'
   | 'bookSeriesVolume'
