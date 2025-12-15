@@ -1,6 +1,8 @@
 name: Publish releases to npm
 
-# based on https://dev.to/michi/publish-to-npm-automatically-with-github-actions-5805
+permissions:
+  id-token: write # required to publish on NPM via Trusted Publisher Workflow; see https://docs.npmjs.com/trusted-publishers
+  contents: read
 
 on:
   release:
@@ -15,7 +17,7 @@ jobs:
         with:
           ref: ${{ github.event.release.target_commitish }}
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
@@ -26,8 +28,6 @@ jobs:
       - run: git config --global user.email "github-cd-bot@ems.press"
       - run: npm version ${{ github.event.release.tag_name }}
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
       - run: git push
         env:
           github-token: ${{ secrets.GITHUB_TOKEN }}
