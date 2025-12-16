@@ -11,6 +11,8 @@ export type Attributes = {
   givenName?: string
   prefix?: string
   orcid?: string
+  zbmathId?: string
+  mathReviewsId?: string
   description?: string
   organization?: string
   role?: string
